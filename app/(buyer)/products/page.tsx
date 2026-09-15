@@ -1,51 +1,37 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useProductStore } from '@/store/productStore';
+import { useCartStore } from '@/store/cartStore';
 import { PRODUCT_CATEGORIES } from '@/lib/constants';
+import { sampleProducts } from '@/lib/mockProducts';
 
 export default function ProductsPage() {
   const {
     filteredProducts,
     filters,
     setFilters,
+    setProducts,
+    setLoading,
+    setError,
     isLoading,
     error,
   } = useProductStore();
+  const addItem = useCartStore((state) => state.addItem);
   const [sortBy, setSortBy] = useState('newest');
 
   useEffect(() => {
-    // Fetch products from API
-    // This is a placeholder - implement actual API call
-    const mockProducts = [
-      {
-        id: '1',
-        name: 'Vintage Leather Jacket',
-        description: 'Classic leather jacket in great condition',
-        category: 'Clothing',
-        price: 8500,
-        originalPrice: 15000,
-        images: ['https://via.placeholder.com/300x300'],
-        size: 'M',
-        condition: 'GOOD',
-        material: 'Leather',
-        color: 'Black',
-        brand: 'Zara',
-        quantity: 5,
-        sold: 12,
-        rating: 4.5,
-        trending: true,
-        published: true,
-        sellerId: 'seller1',
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-      // Add more mock products as needed
-    ];
+    setLoading(true);
+    setError(null);
 
-    // Uncomment when API is ready:
-    // useProductStore.setState({ products: mockProducts });
-  }, []);
+    const timer = setTimeout(() => {
+      setProducts(sampleProducts);
+      setLoading(false);
+    }, 250);
+
+    return () => clearTimeout(timer);
+  }, [setError, setLoading, setProducts]);
 
   const handleSortChange = (value: string) => {
     setSortBy(value);
@@ -210,9 +196,21 @@ export default function ProductsPage() {
                             </p>
                           )}
                         </div>
-                        <button className="rounded-full bg-secondary px-4 py-2 text-sm font-semibold text-white transition hover:bg-black">
-                          View
-                        </button>
+                        <div className="flex gap-2">
+                          <Link
+                            href={`/products/${product.id}`}
+                            className="rounded-full border border-secondary px-3 py-2 text-xs font-semibold text-secondary transition hover:bg-[#fff7d6]"
+                          >
+                            View
+                          </Link>
+                          <button
+                            type="button"
+                            onClick={() => addItem(product, 1)}
+                            className="rounded-full bg-secondary px-3 py-2 text-xs font-semibold text-white transition hover:bg-black"
+                          >
+                            Add
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </article>
