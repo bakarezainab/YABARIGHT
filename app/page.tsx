@@ -94,7 +94,10 @@ export default function Home() {
 				<div className="container-custom flex items-center justify-between py-4">
 					<Link href="/" className="flex items-center gap-3">
 						<div className="brand-wordmark text-3xl sm:text-4xl">
-							Y<span className="text-[#c88d00]">A</span>BA<span className="text-[#c88d00]">RIGHT</span>
+							<span className="text-white">Y</span>
+							<span className="text-[#c88d00]">A</span>
+							<span className="text-white">BA</span>
+							<span className="text-[#c88d00]">RIGHT</span>
 						</div>
 					</Link>
 
