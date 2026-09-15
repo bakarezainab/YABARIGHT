@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useProductStore } from '@/store/productStore';
 import { useCartStore } from '@/store/cartStore';
+import { useWishlistStore } from '@/store/wishlistStore';
 import { PRODUCT_CATEGORIES } from '@/lib/constants';
 import { sampleProducts } from '@/lib/mockProducts';
 
@@ -19,6 +20,7 @@ export default function ProductsPage() {
     error,
   } = useProductStore();
   const addItem = useCartStore((state) => state.addItem);
+  const { items: wishlistItems, toggleItem } = useWishlistStore();
   const [sortBy, setSortBy] = useState('newest');
 
   useEffect(() => {
@@ -44,9 +46,7 @@ export default function ProductsPage() {
         <div className="container-custom py-6 sm:py-8">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-                Marketplace
-              </p>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Marketplace</p>
               <h1 className="mt-2 text-3xl font-black tracking-tight sm:text-4xl">
                 Shop YABA<span className="text-primary">RIGHT</span> Fashion
               </h1>
@@ -82,9 +82,7 @@ export default function ProductsPage() {
 
               <div className="space-y-6">
                 <div>
-                  <label className="mb-2 block text-sm font-semibold text-gray-700">
-                    Search
-                  </label>
+                  <label className="mb-2 block text-sm font-semibold text-gray-700">Search</label>
                   <input
                     type="text"
                     placeholder="Search products..."
@@ -95,9 +93,7 @@ export default function ProductsPage() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-semibold text-gray-700">
-                    Category
-                  </label>
+                  <label className="mb-2 block text-sm font-semibold text-gray-700">Category</label>
                   <select
                     value={filters.category}
                     onChange={(e) => setFilters({ category: e.target.value })}
@@ -113,9 +109,7 @@ export default function ProductsPage() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-semibold text-gray-700">
-                    Price range
-                  </label>
+                  <label className="mb-2 block text-sm font-semibold text-gray-700">Price range</label>
                   <input
                     type="range"
                     min="0"
@@ -130,9 +124,7 @@ export default function ProductsPage() {
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-semibold text-gray-700">
-                    Sort by
-                  </label>
+                  <label className="mb-2 block text-sm font-semibold text-gray-700">Sort by</label>
                   <select
                     value={sortBy}
                     onChange={(e) => handleSortChange(e.target.value)}
@@ -169,8 +161,16 @@ export default function ProductsPage() {
                         alt={product.name}
                         className="h-64 w-full object-cover transition duration-300 hover:scale-105"
                       />
+                      <button
+                        type="button"
+                        onClick={() => toggleItem(product.id)}
+                        className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/85 text-lg shadow-sm transition hover:scale-105"
+                        aria-label="Toggle wishlist"
+                      >
+                        {wishlistItems.includes(product.id) ? '♥' : '♡'}
+                      </button>
                       {product.trending && (
-                        <span className="absolute right-3 top-3 rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-secondary">
+                        <span className="absolute left-3 top-3 rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-secondary">
                           Trending
                         </span>
                       )}
