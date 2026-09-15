@@ -49,112 +49,115 @@ export default function RegisterPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold mb-6 text-secondary">Create Account</h2>
+    <form onSubmit={handleSubmit} className="rounded-[1.75rem] border border-black/5 bg-white p-5 shadow-sm sm:p-8">
+      <div className="mb-6">
+        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-primary">Create account</p>
+        <h2 className="mt-2 text-3xl font-black text-secondary">Join YABARIGHT</h2>
+      </div>
 
       {error && (
-        <div className="mb-4 p-4 bg-red-100 text-red-700 rounded-lg">
+        <div className="mb-5 rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
           {error}
         </div>
       )}
 
-      <div className="mb-4">
-        <label className="block font-semibold mb-2">Account Type</label>
-        <div className="flex gap-4">
-          <label className="flex items-center">
-            <input
-              type="radio"
-              value="buyer"
-              checked={role === 'buyer'}
-              onChange={(e) => setRole(e.target.value as 'buyer' | 'seller')}
-              className="mr-2"
-            />
-            <span>Buyer</span>
-          </label>
-          <label className="flex items-center">
-            <input
-              type="radio"
-              value="seller"
-              checked={role === 'seller'}
-              onChange={(e) => setRole(e.target.value as 'buyer' | 'seller')}
-              className="mr-2"
-            />
-            <span>Seller</span>
-          </label>
+      <div className="mb-5">
+        <label className="mb-2 block text-sm font-semibold text-gray-700">Account type</label>
+        <div className="grid grid-cols-2 gap-3">
+          {(['buyer', 'seller'] as const).map((accountType) => (
+            <button
+              key={accountType}
+              type="button"
+              onClick={() => setRole(accountType)}
+              className={`rounded-2xl border px-3 py-3 text-sm font-semibold transition ${
+                role === accountType
+                  ? 'border-primary bg-primary text-secondary'
+                  : 'border-gray-200 bg-[#fffdf9] text-gray-700 hover:border-primary/60'
+              }`}
+            >
+              {accountType === 'buyer' ? 'Buyer' : 'Seller'}
+            </button>
+          ))}
         </div>
       </div>
 
-      <div className="mb-4">
-        <label htmlFor="name" className="block font-semibold mb-2">
-          Full Name
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-        />
-      </div>
+      <div className="space-y-5">
+        <div>
+          <label htmlFor="name" className="mb-2 block text-sm font-semibold text-gray-700">
+            Full name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            placeholder="Your full name"
+            className="w-full rounded-2xl border border-gray-200 bg-[#fffdf9] px-4 py-3 text-sm text-secondary outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+          />
+        </div>
 
-      <div className="mb-4">
-        <label htmlFor="email" className="block font-semibold mb-2">
-          Email
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-        />
-      </div>
+        <div>
+          <label htmlFor="email" className="mb-2 block text-sm font-semibold text-gray-700">
+            Email address
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            placeholder="you@example.com"
+            className="w-full rounded-2xl border border-gray-200 bg-[#fffdf9] px-4 py-3 text-sm text-secondary outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+          />
+        </div>
 
-      <div className="mb-4">
-        <label htmlFor="password" className="block font-semibold mb-2">
-          Password
-        </label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-        />
-      </div>
+        <div>
+          <label htmlFor="password" className="mb-2 block text-sm font-semibold text-gray-700">
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+            placeholder="Create a password"
+            className="w-full rounded-2xl border border-gray-200 bg-[#fffdf9] px-4 py-3 text-sm text-secondary outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+          />
+        </div>
 
-      <div className="mb-6">
-        <label htmlFor="confirmPassword" className="block font-semibold mb-2">
-          Confirm Password
-        </label>
-        <input
-          type="password"
-          id="confirmPassword"
-          name="confirmPassword"
-          value={formData.confirmPassword}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-primary"
-        />
+        <div>
+          <label htmlFor="confirmPassword" className="mb-2 block text-sm font-semibold text-gray-700">
+            Confirm password
+          </label>
+          <input
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            value={formData.confirmPassword}
+            onChange={handleChange}
+            required
+            placeholder="Confirm your password"
+            className="w-full rounded-2xl border border-gray-200 bg-[#fffdf9] px-4 py-3 text-sm text-secondary outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20"
+          />
+        </div>
       </div>
 
       <button
         type="submit"
         disabled={isLoading}
-        className="w-full bg-secondary text-white py-2 rounded-lg font-semibold hover:bg-opacity-90 disabled:opacity-50"
+        className="mt-7 w-full rounded-2xl bg-secondary px-4 py-3 text-base font-semibold text-white transition hover:bg-black disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {isLoading ? 'Creating Account...' : 'Create Account'}
+        {isLoading ? 'Creating account...' : 'Create account'}
       </button>
 
-      <p className="text-center mt-4 text-gray-600">
+      <p className="mt-6 text-center text-sm text-gray-600">
         Already have an account?{' '}
-        <Link href="/login" className="text-primary font-semibold hover:underline">
+        <Link href="/login" className="font-semibold text-primary hover:underline">
           Login here
         </Link>
       </p>
