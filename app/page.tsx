@@ -3,98 +3,119 @@ import { sampleProducts } from '@/lib/mockProducts';
 
 const categoryPills = ['Thrift', 'New', 'Deals', 'Declutter', 'TradeOff'];
 
-const saleHighlights = [
+// Categories with Nigerian-relevant imagery
+const quickCategories = [
 	{
-		title: 'Male essentials',
-		caption: 'Suits, shirts, jackets & denim',
-		image:
-			'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=900&q=80',
+		title: 'Shoes',
+		subtitle: 'Sneakers • Sandals • Boots',
+		image: 'https://images.unsplash.com/photo-1596492784531-6e6eb5ea463f?auto=format&fit=crop&w=900&q=80',
+		count: '2,340+ items',
+	},
+	{
+		title: 'Bags',
+		subtitle: 'Totes • Crossbody • Statement',
+		image: 'https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=80',
+		count: '1,850+ items',
+	},
+	{
+		title: 'Clothes',
+		subtitle: 'Streetwear • Everyday Fits',
+		image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80',
+		count: '4,200+ items',
+	},
+	{
+		title: 'Shirts',
+		subtitle: 'Folded Stacks • Premium Picks',
+		image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=80',
+		count: '1,560+ items',
+	},
+	{
+		title: 'Suits',
+		subtitle: 'Smart Looks for Work & Events',
+		image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80',
+		count: '890+ items',
+	},
+	{
+		title: 'Accessories',
+		subtitle: 'Watches • Belts • Jewelry',
+		image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=900&q=80',
+		count: '3,100+ items',
+	},
+];
+
+// Style collections
+const styleCollections = [
+	{
+		title: 'Folded Shirts',
+		caption: '5 in a roll • Ready to wear',
+		image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=80',
 		accent: 'from-[#f5d76f] to-[#f4c542]',
+		link: '/products?category=shirts',
 	},
 	{
-		title: 'Female styles',
-		caption: 'Bags, dresses, skirts & statement fits',
-		image:
-			'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80',
+		title: 'Female Style',
+		caption: 'Shoes, bags & everyday edits',
+		image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=80',
 		accent: 'from-[#f4d8c6] to-[#d7a58c]',
+		link: '/products?category=female',
 	},
 	{
-		title: 'Sneakers & trainers',
-		caption: 'Clean kicks for work, weekends & outings',
-		image:
-			'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80',
+		title: 'Trainers & Suits',
+		caption: 'Fresh street and smart office pairs',
+		image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80',
 		accent: 'from-[#a7d5d9] to-[#54c1c5]',
+		link: '/products?category=male',
 	},
 ];
 
-const bannerItems = [
-	'Shoes',
-	'Bags',
-	'Clothes',
-	'Shirts',
-	'Suits',
-	'Male',
-	'Female',
+// Gender collections
+const genderCollections = [
+	{
+		label: 'Male Collection',
+		description: 'Sharp suits, casual shirts, and everyday essentials',
+		image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80',
+		link: '/products?gender=male',
+	},
+	{
+		label: 'Female Collection',
+		description: 'Trendy dresses, bags, shoes and statement pieces',
+		image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=80',
+		link: '/products?gender=female',
+	},
 ];
 
-const featuredProducts = sampleProducts.slice(0, 4);
+const featuredProducts = sampleProducts.slice(0, 8);
 
 export default function Home() {
 	return (
-		<main className="min-h-screen bg-[#0a0a0a] text-white">
-			<header className="sticky top-0 z-30 border-b border-white/10 bg-[#0a0a0a]/90 backdrop-blur-sm">
+		<main className="min-h-screen bg-[#f5f0e8] text-[#121212]">
+			{/* Header - Fixed with clear logo visibility */}
+			<header className="sticky top-0 z-50 border-b border-[#c88d00]/30 bg-[#0b0b0b] shadow-lg">
 				<div className="container-custom flex items-center justify-between py-4">
 					<Link href="/" className="flex items-center gap-3">
-						<div className="text-2xl font-black tracking-[-0.08em] text-white">
-							<span className="text-primary">Y</span>
-							<span className="text-white">ABA</span>
-							<span className="text-primary">RIGHT</span>
+						<div className="brand-wordmark text-3xl sm:text-4xl">
+							Y<span className="text-[#c88d00]">A</span>BA<span className="text-[#c88d00]">RIGHT</span>
 						</div>
 					</Link>
 
-					<nav className="hidden items-center gap-6 text-sm font-medium text-white/80 md:flex">
-						<Link
-							href="/products"
-							className="transition hover:text-primary"
-						>
-							Shop
-						</Link>
-						<Link
-							href="/products"
-							className="transition hover:text-primary"
-						>
-							New In
-						</Link>
-						<Link
-							href="/products"
-							className="transition hover:text-primary"
-						>
-							Deals
-						</Link>
-						<Link
-							href="/products"
-							className="transition hover:text-primary"
-						>
-							Declutter
-						</Link>
-						<Link
-							href="/products"
-							className="transition hover:text-primary"
-						>
-							TradeOff
-						</Link>
+					<nav className="hidden items-center gap-6 text-sm font-bold text-white/80 md:flex">
+						{categoryPills.map((item) => (
+							<Link key={item} href="/products" className="transition hover:text-[#c88d00]">
+								{item}
+							</Link>
+						))}
 					</nav>
 
 					<div className="flex items-center gap-3">
 						<Link
 							href="/login"
-							className="hidden text-sm font-semibold text-white/80 transition hover:text-primary sm:inline-flex"
+							className="hidden text-sm font-semibold text-white/80 transition hover:text-[#c88d00] sm:inline-flex"
 						>
 							Login
 						</Link>
 						<Link
 							href="/products"
-							className="inline-flex rounded-full bg-primary px-4 py-2 text-sm font-bold text-secondary transition hover:translate-y-[-1px]"
+							className="inline-flex rounded-full bg-[#c88d00] px-6 py-2.5 text-sm font-black text-[#131313] transition hover:-translate-y-0.5 hover:bg-[#ffcc00]"
 						>
 							Shop now
 						</Link>
@@ -102,293 +123,571 @@ export default function Home() {
 				</div>
 			</header>
 
-			<section className="container-custom pt-8 pb-6 sm:pt-10 lg:pt-12">
-				<div className="rounded-[2rem] border border-white/10 bg-[#101010] px-4 py-4 shadow-[0_20px_60px_rgba(0,0,0,0.5)] sm:px-6 sm:py-6 lg:px-8 lg:py-8">
-					<div className="mb-5 flex flex-wrap gap-2">
-						{categoryPills.map((item) => (
-							<span
-								key={item}
-								className="rounded-full border border-primary/40 bg-primary/10 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-primary"
-							>
-								{item}
-							</span>
-						))}
-					</div>
-
-					<div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-						<div className="space-y-6">
-							<div className="overflow-hidden">
-								<div className="text-[3.2rem] font-black leading-[0.8] tracking-[-0.12em] sm:text-[5rem] lg:text-[7.5rem]">
-									<span className="inline-block -rotate-6 transform text-white">
-										Y
+			{/* Hero Banner Carousel - Multiple Product Banners */}
+			<section className="relative overflow-hidden bg-[#000000]">
+				<div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
+					{/* Banner 1 - Shoes & Bags */}
+					<div className="min-w-full snap-center">
+						<div className="relative h-[500px]">
+							<img
+								src="https://images.unsplash.com/photo-1596492784531-6e6eb5ea463f?auto=format&fit=crop&w=1600&q=80"
+								alt="Shoes and Bags"
+								className="h-full w-full object-cover"
+							/>
+							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
+							<div className="absolute inset-0 container-custom flex items-center">
+								<div className="max-w-xl space-y-4">
+									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
+										Female Collection
 									</span>
-									<span className="inline-block text-[#f5d76f]">A</span>
-									<span className="inline-block -rotate-3 transform text-white">
-										B
-									</span>
-									<span className="inline-block text-[#f5d76f]">A</span>
-									<span className="inline-block rotate-1 transform text-white">
-										R
-									</span>
-									<span className="inline-block text-[#f5d76f]">I</span>
-									<span className="inline-block -rotate-2 transform text-white">
-										G
-									</span>
-									<span className="inline-block text-[#f5d76f]">H</span>
-									<span className="inline-block text-white">T</span>
+									<h2 className="text-5xl font-black text-white lg:text-6xl">
+										Shoes & Bags
+									</h2>
+									<p className="text-lg text-white/80">
+										Step out in style with trending footwear and statement bags
+									</p>
+									<Link
+										href="/products?category=shoes"
+										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
+									>
+										Shop Now
+									</Link>
 								</div>
 							</div>
+						</div>
+					</div>
 
-							<p className="max-w-xl text-base text-white/70 sm:text-lg">
-								Thrifted style, fresh finds, and local deals for real people. Buy
-								clean clothes, trainers, bags, suits and accessories without
-								breaking the bank.
-							</p>
-
-							<div className="flex flex-col gap-3 sm:flex-row">
-								<Link
-									href="/products"
-									className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-bold text-secondary transition hover:translate-y-[-1px]"
-								>
-									Shop the latest drops
-								</Link>
-								<a
-									href="#discover"
-									className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:border-primary hover:text-primary"
-								>
-									Explore more
-								</a>
-							</div>
-
-							<div className="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/55">
-								<span>Fast delivery</span>
-								<span>•</span>
-								<span>Trusted sellers</span>
-								<span>•</span>
-								<span>Nigeria ready</span>
+					{/* Banner 2 - Folded Shirts */}
+					<div className="min-w-full snap-center">
+						<div className="relative h-[500px]">
+							<img
+								src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1600&q=80"
+								alt="Folded Shirts"
+								className="h-full w-full object-cover"
+							/>
+							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
+							<div className="absolute inset-0 container-custom flex items-center">
+								<div className="max-w-xl space-y-4">
+									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
+										Bundle Deal
+									</span>
+									<h2 className="text-5xl font-black text-white lg:text-6xl">
+										5 Shirts in a Roll
+									</h2>
+									<p className="text-lg text-white/80">
+										Quality thrift shirts, neatly folded and ready to wear
+									</p>
+									<Link
+										href="/products?category=shirts"
+										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
+									>
+										Shop Now
+									</Link>
+								</div>
 							</div>
 						</div>
+					</div>
 
-						<div className="relative">
-							<div className="absolute -left-8 top-8 h-32 w-32 rounded-full bg-primary/25 blur-3xl" />
-							<div className="absolute -right-4 bottom-8 h-28 w-28 rounded-full bg-[#6fe7d7]/20 blur-3xl" />
+					{/* Banner 3 - Male Suits */}
+					<div className="min-w-full snap-center">
+						<div className="relative h-[500px]">
+							<img
+								src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=80"
+								alt="Suits and Corporate Wear"
+								className="h-full w-full object-cover"
+							/>
+							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
+							<div className="absolute inset-0 container-custom flex items-center">
+								<div className="max-w-xl space-y-4">
+									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
+										Male Collection
+									</span>
+									<h2 className="text-5xl font-black text-white lg:text-6xl">
+										Suits & Trainers
+									</h2>
+									<p className="text-lg text-white/80">
+										Smart office looks and street-ready trainers for every occasion
+									</p>
+									<Link
+										href="/products?category=suits"
+										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
+									>
+										Shop Now
+									</Link>
+								</div>
+							</div>
+						</div>
+					</div>
 
-							<div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#111111] p-3 shadow-[0_25px_80px_rgba(0,0,0,0.45)]">
-								<div className="grid gap-3 sm:grid-cols-2">
-									<div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5">
-										<img
-											src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80"
-											alt="Folded thrift shirts"
-											className="h-52 w-full object-cover"
-										/>
-										<div className="bg-[#0e0e0e] p-3">
-											<p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-												Folded shirts
-											</p>
-											<p className="mt-1 text-sm text-white/80">
-												Stacked styles & color picks
-											</p>
-										</div>
-									</div>
+					{/* Banner 4 - Bags Collection */}
+					<div className="min-w-full snap-center">
+						<div className="relative h-[500px]">
+							<img
+								src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=1600&q=80"
+								alt="Bags Collection"
+								className="h-full w-full object-cover"
+							/>
+							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
+							<div className="absolute inset-0 container-custom flex items-center">
+								<div className="max-w-xl space-y-4">
+									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
+										Trending Now
+									</span>
+									<h2 className="text-5xl font-black text-white lg:text-6xl">
+										Designer Bags
+									</h2>
+									<p className="text-lg text-white/80">
+										Totes, crossbody, and statement bags for every style
+									</p>
+									<Link
+										href="/products?category=bags"
+										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
+									>
+										Shop Now
+									</Link>
+								</div>
+							</div>
+						</div>
+					</div>
 
-									<div className="space-y-3">
-										<div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5">
-											<img
-												src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=900&q=80"
-												alt="Female shoes and bags"
-												className="h-28 w-full object-cover"
-											/>
-											<div className="bg-[#111111] p-3">
-												<p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-													Ladies edit
-												</p>
-											</div>
-										</div>
-
-										<div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5">
-											<img
-												src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?auto=format&fit=crop&w=900&q=80"
-												alt="Bags and accessories"
-												className="h-28 w-full object-cover"
-											/>
-											<div className="bg-[#111111] p-3">
-												<p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-													Bags & accessories
-												</p>
-											</div>
-										</div>
-									</div>
+					{/* Banner 5 - Accessories */}
+					<div className="min-w-full snap-center">
+						<div className="relative h-[500px]">
+							<img
+								src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1600&q=80"
+								alt="Accessories"
+								className="h-full w-full object-cover"
+							/>
+							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
+							<div className="absolute inset-0 container-custom flex items-center">
+								<div className="max-w-xl space-y-4">
+									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
+										Complete Your Look
+									</span>
+									<h2 className="text-5xl font-black text-white lg:text-6xl">
+										Accessories
+									</h2>
+									<p className="text-lg text-white/80">
+										Watches, belts, jewelry, and more to elevate your outfit
+									</p>
+									<Link
+										href="/products?category=accessories"
+										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
+									>
+										Shop Now
+									</Link>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section>
 
-			<section className="container-custom py-6">
-				<div className="flex flex-wrap gap-3">
-					{bannerItems.map((item) => (
-						<span
-							key={item}
-							className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white/75"
-						>
-							{item}
-						</span>
+				{/* Scroll Indicator */}
+				<div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+					{[1, 2, 3, 4, 5].map((_, index) => (
+						<div
+							key={index}
+							className={`h-2 rounded-full transition-all ${
+								index === 0 ? 'w-8 bg-[#c88d00]' : 'w-2 bg-white/40'
+							}`}
+						/>
 					))}
 				</div>
+
+				{/* Scroll Down Arrow */}
+				<a
+					href="#categories"
+					className="absolute bottom-6 right-6 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition hover:bg-[#c88d00] group"
+				>
+					<svg
+						className="h-6 w-6 animate-bounce text-white group-hover:text-black"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke="currentColor"
+					>
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+					</svg>
+				</a>
 			</section>
 
-			<section id="discover" className="container-custom py-10">
-				<div className="mb-6 flex items-end justify-between gap-4">
+			{/* Category Pills */}
+			<section className="bg-[#0b0b0b] py-4">
+				<div className="container-custom">
+					<div className="flex flex-wrap gap-2">
+						{['Shoes', 'Bags', 'Clothes', 'Shirts', 'Suits', 'Male', 'Female'].map((item) => (
+							<Link
+								key={item}
+								href={`/products?category=${item.toLowerCase()}`}
+								className="rounded-full border border-[#c88d00]/40 bg-[#c88d00]/10 px-5 py-2 text-xs font-black uppercase tracking-wider text-[#c88d00] transition hover:bg-[#c88d00] hover:text-black"
+							>
+								{item}
+							</Link>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Categories Grid */}
+			<section id="categories" className="container-custom py-12">
+				<div className="mb-8 flex items-end justify-between gap-4">
 					<div>
-						<p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-							Popular picks
+						<p className="text-xs font-black uppercase tracking-[0.24em] text-[#c88d00]">
+							Browse by Category
 						</p>
-						<h2 className="mt-2 text-3xl font-black text-white sm:text-4xl">
-							Shop by style
+						<h2 className="mt-2 text-3xl font-black text-[#111111] sm:text-4xl">
+							Shop by Category
 						</h2>
 					</div>
 					<Link
 						href="/products"
-						className="text-sm font-semibold text-primary transition hover:text-white"
+						className="text-sm font-black text-[#111111] hover:text-[#c88d00]"
 					>
-						See all products →
+						View All →
 					</Link>
+				</div>
+
+				<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+					{quickCategories.map((category) => (
+						<Link
+							key={category.title}
+							href={`/products?category=${category.title.toLowerCase()}`}
+							className="group overflow-hidden rounded-2xl border border-[#e8dfd1] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+						>
+							<div className="relative h-40 overflow-hidden">
+								<img
+									src={category.image}
+									alt={category.title}
+									className="h-full w-full object-cover transition duration-300 group-hover:scale-110"
+								/>
+								<div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+								<div className="absolute bottom-3 left-3">
+									<p className="text-lg font-black text-white">{category.title}</p>
+								</div>
+							</div>
+							<div className="p-3">
+								<p className="text-xs text-[#575757]">{category.subtitle}</p>
+								<p className="mt-1 text-xs font-bold text-[#c88d00]">{category.count}</p>
+							</div>
+						</Link>
+					))}
+				</div>
+			</section>
+
+			{/* Featured Products */}
+			<section className="bg-white py-12">
+				<div className="container-custom">
+					<div className="mb-8 flex items-end justify-between gap-4">
+						<div>
+							<p className="text-xs font-black uppercase tracking-[0.24em] text-[#c88d00]">
+								Top Sellers
+							</p>
+							<h2 className="mt-2 text-3xl font-black text-[#111111] sm:text-4xl">
+								Products You Can Shop Now
+							</h2>
+						</div>
+						<Link
+							href="/products"
+							className="rounded-full bg-[#c88d00] px-5 py-2 text-sm font-black uppercase tracking-wide text-[#111] transition hover:bg-[#ffcc00]"
+						>
+							Shop All
+						</Link>
+					</div>
+
+					<div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+						{featuredProducts.map((product) => (
+							<Link
+								key={product.id}
+								href={`/products/${product.id}`}
+								className="group overflow-hidden rounded-2xl border border-[#e6dcc7] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
+							>
+								<div className="relative h-64 overflow-hidden">
+									<img
+										src={product.images[0]}
+										alt={product.name}
+										className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+									/>
+									{product.trending && (
+										<span className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1 text-[10px] font-black uppercase tracking-wider text-[#111111]">
+											Trending
+										</span>
+									)}
+									<div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3 opacity-0 transition group-hover:opacity-100">
+										<span className="rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-[#111]">
+											Quick View
+										</span>
+									</div>
+								</div>
+								<div className="p-4">
+									<div className="flex items-center justify-between gap-2">
+										<span className="rounded-full bg-[#fff7d6] px-2.5 py-1 text-[10px] font-black uppercase tracking-wide text-[#111111]">
+											{product.condition}
+										</span>
+										<span className="text-[10px] font-semibold uppercase tracking-wide text-[#676767]">
+											{product.brand || 'Verified'}
+										</span>
+									</div>
+									<h3 className="mt-3 text-lg font-black text-[#111111] line-clamp-1">{product.name}</h3>
+									<p className="mt-1 text-sm text-[#5b5b5b] line-clamp-2">{product.description}</p>
+									<div className="mt-4 flex items-center justify-between">
+										<div>
+											<p className="text-xl font-black text-[#111111]">₦{product.price.toLocaleString()}</p>
+											{product.originalPrice && (
+												<p className="text-xs text-[#797979] line-through">
+													₦{product.originalPrice.toLocaleString()}
+												</p>
+											)}
+										</div>
+										<span className="rounded-full bg-[#c88d00] px-4 py-2 text-xs font-black uppercase tracking-wide text-[#111] transition group-hover:bg-[#ffcc00]">
+											View
+										</span>
+									</div>
+								</div>
+							</Link>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Style Edit Section */}
+			<section className="container-custom py-12">
+				<div className="mb-8 flex items-end justify-between gap-4">
+					<div>
+						<p className="text-xs font-black uppercase tracking-[0.24em] text-[#c88d00]">
+							Curated for You
+						</p>
+						<h2 className="mt-2 text-3xl font-black text-[#111111] sm:text-4xl">
+							Fresh Local Finds
+						</h2>
+					</div>
 				</div>
 
 				<div className="grid gap-5 md:grid-cols-3">
-					{saleHighlights.map((item) => (
+					{styleCollections.map((item) => (
 						<Link
 							key={item.title}
-							href="/products"
-							className="group overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#111111] shadow-[0_20px_45px_rgba(0,0,0,0.25)] transition hover:-translate-y-1"
+							href={item.link}
+							className="group overflow-hidden rounded-3xl border border-[#eadfcf] bg-[#f9f5f0] shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
 						>
-							<div
-								className={`h-72 bg-gradient-to-br ${item.accent}`}
-							>
+							<div className={`relative h-80 bg-gradient-to-br ${item.accent}`}>
 								<img
 									src={item.image}
 									alt={item.title}
-									className="h-full w-full object-cover mix-blend-multiply opacity-90"
+									className="h-full w-full object-cover mix-blend-multiply opacity-90 transition duration-300 group-hover:scale-105"
 								/>
-							</div>
-							<div className="p-5">
-								<p className="text-2xl font-black text-white">
-									{item.title}
-								</p>
-								<p className="mt-2 text-sm text-white/70">
-									{item.caption}
-								</p>
+								<div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+								<div className="absolute bottom-4 left-4 right-4">
+									<p className="text-2xl font-black text-white drop-shadow-lg">{item.title}</p>
+									<p className="mt-1 text-sm text-white/90">{item.caption}</p>
+								</div>
 							</div>
 						</Link>
 					))}
 				</div>
 			</section>
 
-			<section className="container-custom py-8">
-				<div className="mb-6 flex items-end justify-between gap-4">
-					<div>
-						<p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-							Fresh finds
+			{/* Male/Female Split */}
+			<section className="py-12">
+				<div className="container-custom">
+					<div className="mb-8 text-center">
+						<p className="text-xs font-black uppercase tracking-[0.24em] text-[#c88d00]">
+							Shop by Gender
 						</p>
-						<h2 className="mt-2 text-3xl font-black text-white sm:text-4xl">
-							Trending now
+						<h2 className="mt-2 text-3xl font-black text-[#111111] sm:text-4xl">
+							For Him & For Her
 						</h2>
 					</div>
-					<Link
-						href="/products"
-						className="text-sm font-semibold text-primary transition hover:text-white"
-					>
-						Shop all →
-					</Link>
-				</div>
 
-				<div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-					{featuredProducts.map((product) => (
+					<div className="grid gap-6 md:grid-cols-2">
+						{genderCollections.map((spot) => (
+							<Link
+								key={spot.label}
+								href={spot.link}
+								className="group relative overflow-hidden rounded-3xl"
+							>
+								<div className="h-96">
+									<img
+										src={spot.image}
+										alt={spot.label}
+										className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+									/>
+									<div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+								</div>
+								<div className="absolute bottom-6 left-6 right-6">
+									<p className="text-3xl font-black text-white">{spot.label}</p>
+									<p className="mt-2 text-sm text-white/80">{spot.description}</p>
+									<span className="mt-4 inline-block rounded-full bg-white px-6 py-2 text-sm font-black uppercase tracking-wide text-[#111] transition group-hover:bg-[#c88d00]">
+										Shop Now
+									</span>
+								</div>
+							</Link>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Why Shop With Us */}
+			<section className="bg-white py-12">
+				<div className="container-custom">
+					<div className="mb-8 text-center">
+						<p className="text-xs font-black uppercase tracking-[0.24em] text-[#c88d00]">
+							Why YabaRight?
+						</p>
+						<h2 className="mt-2 text-3xl font-black text-[#111111] sm:text-4xl">
+							Built for Everyday Buyers
+						</h2>
+					</div>
+
+					<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+						{[
+							{
+								icon: '🚚',
+								title: 'Fast Delivery',
+								description: 'Nationwide delivery within 2-5 business days',
+							},
+							{
+								icon: '✅',
+								title: 'Verified Sellers',
+								description: 'All sellers are vetted and trusted',
+							},
+							{
+								icon: '💰',
+								title: 'Best Prices',
+								description: 'Unbeatable prices on thrift & new items',
+							},
+							{
+								icon: '🔄',
+								title: 'Easy Returns',
+								description: 'Hassle-free returns within 7 days',
+							},
+						].map((item, index) => (
+							<div
+								key={index}
+								className="rounded-2xl border border-[#e8e0d5] bg-[#f9f5f0] p-6 text-center"
+							>
+								<div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#c88d00]/20 text-3xl">
+									{item.icon}
+								</div>
+								<h3 className="text-lg font-black text-[#111]">{item.title}</h3>
+								<p className="mt-2 text-sm text-[#666]">{item.description}</p>
+							</div>
+						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Stats Section */}
+			<section className="container-custom py-12">
+				<div className="overflow-hidden rounded-3xl bg-[#111111] p-8 text-white md:p-12">
+					<div className="grid gap-8 md:grid-cols-4">
+						<div className="text-center">
+							<p className="text-4xl font-black text-[#c88d00] md:text-5xl">5,000+</p>
+							<p className="mt-2 text-sm text-white/70">Active Products</p>
+						</div>
+						<div className="text-center">
+							<p className="text-4xl font-black text-[#c88d00] md:text-5xl">2,500+</p>
+							<p className="mt-2 text-sm text-white/70">Verified Sellers</p>
+						</div>
+						<div className="text-center">
+							<p className="text-4xl font-black text-[#c88d00] md:text-5xl">10,000+</p>
+							<p className="mt-2 text-sm text-white/70">Happy Customers</p>
+						</div>
+						<div className="text-center">
+							<p className="text-4xl font-black text-[#c88d00] md:text-5xl">36</p>
+							<p className="mt-2 text-sm text-white/70">States Covered</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			{/* CTA Banner */}
+			<section className="container-custom pb-12">
+				<div className="overflow-hidden rounded-3xl bg-gradient-to-r from-[#c88d00] to-[#e8941f] p-8 md:p-12">
+					<div className="flex flex-col items-center justify-between gap-6 md:flex-row">
+						<div>
+							<h2 className="text-2xl font-black text-white md:text-3xl">
+								Ready to Start Selling?
+							</h2>
+							<p className="mt-2 text-white/90">
+								Join thousands of sellers making money on YabaRight
+							</p>
+						</div>
 						<Link
-							key={product.id}
-							href={`/products/${product.id}`}
-							className="group overflow-hidden rounded-[1.6rem] border border-white/10 bg-[#111111] shadow-[0_20px_45px_rgba(0,0,0,0.2)] transition hover:-translate-y-1"
+							href="/register"
+							className="rounded-full bg-white px-8 py-3 text-sm font-black uppercase tracking-wide text-[#111] transition hover:-translate-y-0.5 hover:shadow-lg"
 						>
-							<div className="relative overflow-hidden">
-								<img
-									src={product.images[0]}
-									alt={product.name}
-									className="h-72 w-full object-cover transition duration-300 group-hover:scale-105"
-								/>
-								{product.trending && (
-									<span className="absolute right-3 top-3 rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.14em] text-secondary">
-										Trending
-									</span>
-								)}
-							</div>
-							<div className="p-4">
-								<div className="flex items-center justify-between gap-3">
-									<span className="rounded-full bg-[#fff7d6] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-secondary">
-										{product.condition}
-									</span>
-									<span className="text-xs text-white/55">
-										{product.brand || 'Verified'}
-									</span>
-								</div>
-								<h3 className="mt-3 text-lg font-black text-white">
-									{product.name}
-								</h3>
-								<p className="mt-2 text-sm text-white/60">
-									{product.description}
-								</p>
-								<div className="mt-4 flex items-center justify-between">
-									<div>
-										<p className="text-xl font-black text-primary">
-											₦{product.price.toLocaleString()}
-										</p>
-										{product.originalPrice && (
-											<p className="text-xs text-white/40 line-through">
-												₦{product.originalPrice.toLocaleString()}
-											</p>
-										)}
-									</div>
-									<span className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-semibold text-white/80">
-										View
-									</span>
-								</div>
-							</div>
+							Become a Seller
 						</Link>
-					))}
-				</div>
-			</section>
-
-			<section className="container-custom py-10">
-				<div className="grid gap-5 rounded-[2rem] border border-white/10 bg-[#111111] p-5 md:grid-cols-3 md:p-8">
-					<div>
-						<p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
-							Why locals shop here
-						</p>
-						<h3 className="mt-3 text-3xl font-black text-white">
-							Styled for everyday life
-						</h3>
-					</div>
-					<div className="rounded-[1.5rem] bg-white/5 p-5">
-						<p className="text-2xl font-black text-primary">5000+</p>
-						<p className="mt-2 text-sm text-white/70">
-							Verified thrift finds added weekly
-						</p>
-					</div>
-					<div className="rounded-[1.5rem] bg-white/5 p-5">
-						<p className="text-2xl font-black text-primary">3x</p>
-						<p className="mt-2 text-sm text-white/70">
-							Better value than retail on same looks
-						</p>
 					</div>
 				</div>
 			</section>
 
-			<footer className="border-t border-white/10 bg-[#0a0a0a] py-8">
-				<div className="container-custom flex flex-col gap-3 text-center text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
-					<div className="font-black tracking-[-0.06em] text-white">
-						YABA<span className="text-primary">RIGHT</span>
+			{/* Footer */}
+			<footer className="border-t border-[#c88d00]/30 bg-[#0b0b0b] py-12 text-white">
+				<div className="container-custom">
+					{/* Brand Message Section */}
+					<div className="mb-12 rounded-3xl bg-gradient-to-br from-[#c88d00]/10 to-[#c88d00]/5 p-8 md:p-12">
+						<div className="max-w-3xl">
+							<div className="brand-wordmark mb-6 text-5xl tracking-[-0.15em] md:text-6xl">
+								Y<span className="text-[#c88d00]">A</span>BA<span className="text-[#c88d00]">RIGHT</span>
+							</div>
+							<p className="text-lg leading-relaxed text-white/80 md:text-xl">
+								Thrifted style, fresh finds, and local deals for real people. Buy clean clothes, 
+								trainers, bags, jewelry, and accessories without breaking the bank.
+							</p>
+							<div className="mt-6 flex flex-wrap items-center gap-4 text-sm font-bold uppercase tracking-wider text-[#c88d00]">
+								<span>Fast Delivery</span>
+								<span className="text-white/30">•</span>
+								<span>Trusted Sellers</span>
+								<span className="text-white/30">•</span>
+								<span>Nigeria Ready</span>
+							</div>
+						</div>
 					</div>
-					<p>Built for Nigeria. Styled for real life.</p>
+
+					{/* Footer Links */}
+					<div className="grid gap-8 md:grid-cols-4">
+						<div>
+							<div className="brand-wordmark mb-4 text-2xl tracking-[-0.15em]">
+								Y<span className="text-[#c88d00]">A</span>BA<span className="text-[#c88d00]">RIGHT</span>
+							</div>
+							<p className="text-sm text-white/70">
+								Thrift | New | Deals | Declutter | TradeOff
+							</p>
+							<p className="mt-2 text-sm text-white/70">
+								Built for Nigeria. Styled for real life.
+							</p>
+						</div>
+						<div>
+							<h4 className="mb-4 font-bold text-[#c88d00]">Shop</h4>
+							<ul className="space-y-2 text-sm text-white/70">
+								<li><Link href="/products" className="hover:text-[#c88d00]">All Products</Link></li>
+								<li><Link href="/products?category=thrift" className="hover:text-[#c88d00]">Thrift</Link></li>
+								<li><Link href="/products?category=new" className="hover:text-[#c88d00]">New Arrivals</Link></li>
+								<li><Link href="/products?category=deals" className="hover:text-[#c88d00]">Deals</Link></li>
+							</ul>
+						</div>
+						<div>
+							<h4 className="mb-4 font-bold text-[#c88d00]">Categories</h4>
+							<ul className="space-y-2 text-sm text-white/70">
+								<li><Link href="/products?category=shoes" className="hover:text-[#c88d00]">Shoes</Link></li>
+								<li><Link href="/products?category=bags" className="hover:text-[#c88d00]">Bags</Link></li>
+								<li><Link href="/products?category=clothes" className="hover:text-[#c88d00]">Clothes</Link></li>
+								<li><Link href="/products?category=shirts" className="hover:text-[#c88d00]">Shirts</Link></li>
+							</ul>
+						</div>
+						<div>
+							<h4 className="mb-4 font-bold text-[#c88d00]">Account</h4>
+							<ul className="space-y-2 text-sm text-white/70">
+								<li><Link href="/login" className="hover:text-[#c88d00]">Login</Link></li>
+								<li><Link href="/register" className="hover:text-[#c88d00]">Register</Link></li>
+								<li><Link href="/cart" className="hover:text-[#c88d00]">Cart</Link></li>
+								<li><Link href="/wishlist" className="hover:text-[#c88d00]">Wishlist</Link></li>
+							</ul>
+						</div>
+					</div>
+					<div className="mt-8 border-t border-white/10 pt-8 text-center text-sm text-white/50">
+						<p>© {new Date().getFullYear()} YabaRight. All rights reserved.</p>
+					</div>
 				</div>
 			</footer>
 		</main>

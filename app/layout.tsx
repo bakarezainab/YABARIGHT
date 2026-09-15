@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://yabaright.com'),
   title: 'YABARIGHT - The Digital Home of Affordable Fashion',
   description:
     'Buy and sell quality thrift clothes, bags, and shoes online. Look good, spend smart, shop right.',
