@@ -15,7 +15,7 @@ export default function SellerLayout({
             <img 
               src="/logo.png" 
               alt="YabaRight Logo" 
-              className="h-8 w-auto sm:h-10"
+              className="h-12 w-auto sm:h-14"
             />
           </Link>
 

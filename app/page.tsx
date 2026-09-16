@@ -8,37 +8,37 @@ const quickCategories = [
 	{
 		title: 'Shoes',
 		subtitle: 'Sneakers • Sandals • Boots',
-		image: 'https://images.unsplash.com/photo-1596492784531-6e6eb5ea463f?auto=format&fit=crop&w=900&q=80',
+		image: '/male-shoes-collection.jpg',
 		count: '2,340+ items',
 	},
 	{
 		title: 'Bags',
 		subtitle: 'Totes • Crossbody • Statement',
-		image: 'https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=900&q=80',
+		image: '/WhatsApp Image 2026-09-16 at 9.18.54 AM.jpeg',
 		count: '1,850+ items',
 	},
 	{
 		title: 'Clothes',
 		subtitle: 'Streetwear • Everyday Fits',
-		image: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80',
+		image: '/jeans-folded.jpg',
 		count: '4,200+ items',
 	},
 	{
 		title: 'Shirts',
 		subtitle: 'Folded Stacks • Premium Picks',
-		image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=80',
+		image: '/casual-shirts-colorful.jpg',
 		count: '1,560+ items',
 	},
 	{
 		title: 'Suits',
 		subtitle: 'Smart Looks for Work & Events',
-		image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80',
+		image: '/suit-blue-1.jpg',
 		count: '890+ items',
 	},
 	{
 		title: 'Accessories',
 		subtitle: 'Watches • Belts • Jewelry',
-		image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=900&q=80',
+		image: '/heels-black-pair.jpg',
 		count: '3,100+ items',
 	},
 ];
@@ -48,21 +48,21 @@ const styleCollections = [
 	{
 		title: 'Folded Shirts',
 		caption: '5 in a roll • Ready to wear',
-		image: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=900&q=80',
+		image: '/folded-shirts-blue.jpg',
 		accent: 'from-[#f5d76f] to-[#f4c542]',
 		link: '/products?category=shirts',
 	},
 	{
 		title: 'Female Style',
 		caption: 'Shoes, bags & everyday edits',
-		image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=80',
+		image: '/heels-black-single.jpg',
 		accent: 'from-[#f4d8c6] to-[#d7a58c]',
 		link: '/products?category=female',
 	},
 	{
 		title: 'Trainers & Suits',
 		caption: 'Fresh street and smart office pairs',
-		image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80',
+		image: '/suit-grey-1.jpg',
 		accent: 'from-[#a7d5d9] to-[#54c1c5]',
 		link: '/products?category=male',
 	},
@@ -73,13 +73,13 @@ const genderCollections = [
 	{
 		label: 'Male Collection',
 		description: 'Sharp suits, casual shirts, and everyday essentials',
-		image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80',
+		image: '/suit-blue-1.jpg',
 		link: '/products?gender=male',
 	},
 	{
 		label: 'Female Collection',
 		description: 'Trendy dresses, bags, shoes and statement pieces',
-		image: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=900&q=80',
+		image: '/female-shoe-flat.jpg',
 		link: '/products?gender=female',
 	},
 ];
@@ -96,7 +96,7 @@ export default function Home() {
 						<img 
 							src="/logo.png" 
 							alt="YabaRight Logo" 
-							className="h-10 w-auto sm:h-12"
+							className="h-14 w-auto sm:h-16"
 						/>
 					</Link>
 
@@ -146,7 +146,7 @@ export default function Home() {
 										Casual Wears Below ₦10K
 									</h2>
 									<p className="text-xl font-bold text-[#c88d00]">
-										Quality Okrika • Affordable Prices • Fresh Stock
+										Quality pre owned • Affordable Prices • Fresh Stock
 									</p>
 									<p className="text-lg text-white/80">
 										Shop the best casual wears at unbeatable prices. Your best plug for affordable fashion!
@@ -183,7 +183,7 @@ export default function Home() {
 										SHOP BELOW ₦10K
 									</p>
 									<p className="text-lg text-white/80">
-										Quality office shirts, neatly folded and ready for work. Get professional looks at okrika prices!
+										Quality office shirts, neatly folded and ready for work. Get professional looks at pre owned prices!
 									</p>
 									<Link
 										href="/products?category=shirts"
@@ -200,7 +200,7 @@ export default function Home() {
 					<div className="min-w-full snap-center">
 						<div className="relative h-[500px]">
 							<img
-								src="https://images.unsplash.com/photo-1596492784531-6e6eb5ea463f?auto=format&fit=crop&w=1600&q=80"
+								src="/female-shoe-flat.jpg"
 								alt="Female Shoes"
 								className="h-full w-full object-cover"
 							/>
@@ -234,7 +234,7 @@ export default function Home() {
 					<div className="min-w-full snap-center">
 						<div className="relative h-[500px]">
 							<img
-								src="https://images.unsplash.com/photo-1594223274512-ad4803739b7c?auto=format&fit=crop&w=1600&q=80"
+								src="/WhatsApp Image 2026-09-16 at 9.18.54 AM.jpeg"
 								alt="Bags Collection"
 								className="h-full w-full object-cover"
 							/>
@@ -251,7 +251,7 @@ export default function Home() {
 										BELOW ₦15K
 									</p>
 									<p className="text-lg text-white/80">
-										Quality bags that look brand new. Totes, handbags, and backpacks at okrika prices!
+										Quality bags that look brand new. Totes, handbags, and backpacks at pre owned prices!
 									</p>
 									<Link
 										href="/products?category=bags"
@@ -268,7 +268,7 @@ export default function Home() {
 					<div className="min-w-full snap-center">
 						<div className="relative h-[500px]">
 							<img
-								src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=80"
+								src="/suit-grey-1.jpg"
 								alt="Suits and Blazers"
 								className="h-full w-full object-cover"
 							/>
@@ -285,7 +285,7 @@ export default function Home() {
 										SHOP BELOW ₦20K
 									</p>
 									<p className="text-lg text-white/80">
-										Smart office suits and blazers for the professional look. Quality okrika formal wear!
+										Smart office suits and blazers for the professional look. Quality pre owned formal wear!
 									</p>
 									<Link
 										href="/products?category=suits"
@@ -355,7 +355,7 @@ export default function Home() {
 							SPECIAL OFFERS BELOW ₦9K
 						</h2>
 						<p className="mt-3 text-lg text-gray-700">
-							Quality okrika at unbeatable prices. Grab them before they're gone!
+							Quality pre owned at unbeatable prices. Grab them before they're gone!
 						</p>
 					</div>
 
@@ -375,7 +375,7 @@ export default function Home() {
 									Bundle Deal
 								</span>
 								<div className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1.5 text-sm font-black text-black">
-									₦7,500
+									₦5,000
 								</div>
 							</div>
 							<div className="p-4">
@@ -383,11 +383,11 @@ export default function Home() {
 								<p className="mt-1 text-sm text-[#5b5b5b]">3 Premium office shirts, neatly folded</p>
 								<div className="mt-3 flex items-center justify-between">
 									<div>
-										<p className="text-xs text-gray-500 line-through">₦15,000</p>
-										<p className="text-2xl font-black text-red-600">₦7,500</p>
+										<p className="text-xs text-gray-500 line-through">₦20,000</p>
+										<p className="text-2xl font-black text-red-600">₦5,000</p>
 									</div>
 									<span className="rounded-full bg-red-500 px-4 py-2 text-xs font-black uppercase text-white">
-										Save 50%
+										Save 75%
 									</span>
 								</div>
 							</div>
@@ -408,7 +408,7 @@ export default function Home() {
 									Best Seller
 								</span>
 								<div className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1.5 text-sm font-black text-black">
-									₦6,500
+									₦4,500
 								</div>
 							</div>
 							<div className="p-4">
@@ -416,11 +416,11 @@ export default function Home() {
 								<p className="mt-1 text-sm text-[#5b5b5b]">Quality polo shirts for everyday wear</p>
 								<div className="mt-3 flex items-center justify-between">
 									<div>
-										<p className="text-xs text-gray-500 line-through">₦12,000</p>
-										<p className="text-2xl font-black text-red-600">₦6,500</p>
+										<p className="text-xs text-gray-500 line-through">₦18,000</p>
+										<p className="text-2xl font-black text-red-600">₦4,500</p>
 									</div>
 									<span className="rounded-full bg-red-500 px-4 py-2 text-xs font-black uppercase text-white">
-										Hot Deal
+										Save 75%
 									</span>
 								</div>
 							</div>
@@ -433,27 +433,27 @@ export default function Home() {
 						>
 							<div className="relative h-64 overflow-hidden">
 								<img
-									src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=80"
-									alt="Straw Handbag"
+									src="/WhatsApp Image 2026-09-16 at 9.18.54 AM.jpeg"
+									alt="Designer Handbag"
 									className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
 								/>
 								<span className="absolute left-3 top-3 rounded-full bg-red-500 px-3 py-1 text-xs font-black uppercase tracking-wider text-white">
 									Limited Stock
 								</span>
 								<div className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1.5 text-sm font-black text-black">
-									₦7,500
+									₦6,000
 								</div>
 							</div>
 							<div className="p-4">
-								<h3 className="text-lg font-black text-[#111111]">Straw Woven Handbag</h3>
-								<p className="mt-1 text-sm text-[#5b5b5b]">Eco-friendly handmade bag</p>
+								<h3 className="text-lg font-black text-[#111111]">Designer Handbag</h3>
+								<p className="mt-1 text-sm text-[#5b5b5b]">Quality designer handbag</p>
 								<div className="mt-3 flex items-center justify-between">
 									<div>
-										<p className="text-xs text-gray-500 line-through">₦12,000</p>
-										<p className="text-2xl font-black text-red-600">₦7,500</p>
+										<p className="text-xs text-gray-500 line-through">₦24,000</p>
+										<p className="text-2xl font-black text-red-600">₦6,000</p>
 									</div>
 									<span className="rounded-full bg-red-500 px-4 py-2 text-xs font-black uppercase text-white">
-										Save Big
+										Save 75%
 									</span>
 								</div>
 							</div>
@@ -466,27 +466,27 @@ export default function Home() {
 						>
 							<div className="relative h-64 overflow-hidden">
 								<img
-									src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80"
-									alt="Ankara Skirt"
+									src="/jeans-stack.jpg"
+									alt="Premium Jeans"
 									className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
 								/>
 								<span className="absolute left-3 top-3 rounded-full bg-red-500 px-3 py-1 text-xs font-black uppercase tracking-wider text-white">
 									New Arrival
 								</span>
 								<div className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1.5 text-sm font-black text-black">
-									₦8,500
+									₦7,000
 								</div>
 							</div>
 							<div className="p-4">
-								<h3 className="text-lg font-black text-[#111111]">Ankara Wrap Skirt</h3>
-								<p className="mt-1 text-sm text-[#5b5b5b]">Beautiful Ankara print, premium fabric</p>
+								<h3 className="text-lg font-black text-[#111111]">Premium Jeans</h3>
+								<p className="mt-1 text-sm text-[#5b5b5b]">Quality denim jeans, various sizes</p>
 								<div className="mt-3 flex items-center justify-between">
 									<div>
-										<p className="text-xs text-gray-500 line-through">₦15,000</p>
-										<p className="text-2xl font-black text-red-600">₦8,500</p>
+										<p className="text-xs text-gray-500 line-through">₦28,000</p>
+										<p className="text-2xl font-black text-red-600">₦7,000</p>
 									</div>
 									<span className="rounded-full bg-red-500 px-4 py-2 text-xs font-black uppercase text-white">
-										Trending
+										Save 75%
 									</span>
 								</div>
 							</div>
@@ -803,22 +803,25 @@ export default function Home() {
 				<div className="container-custom">
 					{/* Brand Message Section */}
 					<div className="mb-12 rounded-3xl bg-gradient-to-br from-[#c88d00]/10 to-[#c88d00]/5 p-8 md:p-12">
-						<div className="max-w-3xl">
+						<div className="max-w-4xl">
 							<img 
 								src="/logo.png" 
 								alt="YabaRight Logo" 
 								className="mb-6 h-16 w-auto md:h-20"
 							/>
-							<p className="text-lg leading-relaxed text-white/80 md:text-xl">
-								Thrifted style, fresh finds, and local deals for real people. Buy clean clothes, 
-								trainers, bags, jewelry, and accessories without breaking the bank.
-							</p>
-							<div className="mt-6 flex flex-wrap items-center gap-4 text-sm font-bold uppercase tracking-wider text-[#c88d00]">
-								<span>Fast Delivery</span>
-								<span className="text-white/30">•</span>
-								<span>Trusted Sellers</span>
-								<span className="text-white/30">•</span>
-								<span>Nigeria Ready</span>
+							<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+								<p className="text-lg font-black text-white">LOOK RICH. SPEND SMART.</p>
+								<p className="text-lg font-black text-white">YOUR STYLE, YOUR PRICE.</p>
+								<p className="text-lg font-black text-white">DESIGNER LOOKS. EVERYDAY PRICES.</p>
+								<p className="text-lg font-black text-white">WEAR THE LOOK. OWN THE CONFIDENCE.</p>
+								<p className="text-lg font-black text-white">BIG STYLE. SMALL PRICE.</p>
+								<p className="text-lg font-black text-white">FASHION WITHIN REACH.</p>
+								<p className="text-lg font-black text-white">LOOK GOOD. PAY LESS.</p>
+								<p className="text-lg font-black text-white">YOUR NEXT FIT IS HERE.</p>
+								<p className="text-lg font-black text-white">STYLE SHOULDN'T BE EXPENSIVE.</p>
+								<p className="text-lg font-black text-[#c88d00]">AFFORDABLE. STYLISH. YABARIGHT.</p>
+								<p className="text-lg font-black text-white">THE LOOK YOU WANT. THE PRICE YOU CAN AFFORD.</p>
+								<p className="text-lg font-black text-white">ELEVATE YOUR LOOK. NOT YOUR BUDGET.</p>
 							</div>
 						</div>
 					</div>

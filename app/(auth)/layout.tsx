@@ -15,7 +15,7 @@ export default function AuthLayout({
             <img 
               src="/logo.png" 
               alt="YabaRight Logo" 
-              className="h-8 w-auto sm:h-10"
+              className="h-12 w-auto sm:h-14"
             />
           </Link>
 
@@ -41,13 +41,13 @@ export default function AuthLayout({
                 <img 
                   src="/logo.png" 
                   alt="YabaRight Logo" 
-                  className="mb-6 h-12 w-auto"
+                  className="mb-6 h-16 w-auto"
                 />
                 <h2 className="mt-6 text-4xl font-black leading-tight">
                   Shop smarter. <span className="text-[#c88d00]">Style brighter.</span>
                 </h2>
                 <p className="mt-4 text-base text-white/70">
-                  Discover quality okrika pieces that look premium, feel effortless, and fit your
+                  Discover quality pre owned pieces that look premium, feel effortless, and fit your
                   budget perfectly.
                 </p>
 
@@ -70,7 +70,7 @@ export default function AuthLayout({
                   <img 
                     src="/logo.png" 
                     alt="YabaRight Logo" 
-                    className="mx-auto h-12 w-auto lg:mx-0"
+                    className="mx-auto h-16 w-auto lg:mx-0"
                   />
                   <p className="mt-2 text-sm text-gray-600">Look Good. Spend Smart. Shop Right.</p>
                 </div>
