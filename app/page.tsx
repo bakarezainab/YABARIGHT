@@ -93,12 +93,11 @@ export default function Home() {
 			<header className="sticky top-0 z-50 border-b border-[#c88d00]/30 bg-[#0b0b0b] shadow-lg">
 				<div className="container-custom flex items-center justify-between py-4">
 					<Link href="/" className="flex items-center gap-3">
-						<div className="brand-wordmark text-3xl sm:text-4xl">
-							<span className="text-white">Y</span>
-							<span className="text-[#c88d00]">A</span>
-							<span className="text-white">BA</span>
-							<span className="text-[#c88d00]">RIGHT</span>
-						</div>
+						<img 
+							src="/logo.png" 
+							alt="YabaRight Logo" 
+							className="h-10 w-auto sm:h-12"
+						/>
 					</Link>
 
 					<nav className="hidden items-center gap-6 text-sm font-bold text-white/80 md:flex">
@@ -129,12 +128,80 @@ export default function Home() {
 			{/* Hero Banner Carousel - Multiple Product Banners */}
 			<section className="relative overflow-hidden bg-[#000000]">
 				<div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-					{/* Banner 1 - Shoes & Bags */}
+					{/* Banner 1 - Your Best Plug for Casual Wears */}
+					<div className="min-w-full snap-center">
+						<div className="relative h-[500px]">
+							<img
+								src="/polo-shirts.jpg"
+								alt="Casual Wears - Polo Shirts"
+								className="h-full w-full object-cover"
+							/>
+							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
+							<div className="absolute inset-0 container-custom flex items-center">
+								<div className="max-w-xl space-y-4">
+									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
+										Your Best Plug
+									</span>
+									<h2 className="text-5xl font-black text-white lg:text-6xl">
+										Casual Wears Below ₦10K
+									</h2>
+									<p className="text-xl font-bold text-[#c88d00]">
+										Quality Okrika • Affordable Prices • Fresh Stock
+									</p>
+									<p className="text-lg text-white/80">
+										Shop the best casual wears at unbeatable prices. Your best plug for affordable fashion!
+									</p>
+									<Link
+										href="/products?category=casual"
+										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
+									>
+										Shop Casual Wears
+									</Link>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{/* Banner 2 - Office Shirts */}
+					<div className="min-w-full snap-center">
+						<div className="relative h-[500px]">
+							<img
+								src="/polo-shirts.jpg"
+								alt="Office Shirts - Polo Collection"
+								className="h-full w-full object-cover"
+							/>
+							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
+							<div className="absolute inset-0 container-custom flex items-center">
+								<div className="max-w-xl space-y-4">
+									<span className="inline-block rounded-full bg-red-500 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-white animate-pulse">
+										Special Offers
+									</span>
+									<h2 className="text-5xl font-black text-white lg:text-6xl">
+										Office Shirts
+									</h2>
+									<p className="text-3xl font-black text-[#c88d00]">
+										SHOP BELOW ₦10K
+									</p>
+									<p className="text-lg text-white/80">
+										Quality office shirts, neatly folded and ready for work. Get professional looks at okrika prices!
+									</p>
+									<Link
+										href="/products?category=shirts"
+										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
+									>
+										Shop Office Shirts
+									</Link>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{/* Banner 3 - Female Shoes */}
 					<div className="min-w-full snap-center">
 						<div className="relative h-[500px]">
 							<img
 								src="https://images.unsplash.com/photo-1596492784531-6e6eb5ea463f?auto=format&fit=crop&w=1600&q=80"
-								alt="Shoes and Bags"
+								alt="Female Shoes"
 								className="h-full w-full object-cover"
 							/>
 							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
@@ -144,85 +211,26 @@ export default function Home() {
 										Female Collection
 									</span>
 									<h2 className="text-5xl font-black text-white lg:text-6xl">
-										Shoes & Bags
+										Female Shoes
 									</h2>
+									<p className="text-3xl font-black text-[#c88d00]">
+										FROM ₦5K
+									</p>
 									<p className="text-lg text-white/80">
-										Step out in style with trending footwear and statement bags
+										Heels, sandals, and sneakers at affordable prices. Step out in style without breaking the bank!
 									</p>
 									<Link
 										href="/products?category=shoes"
 										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
 									>
-										Shop Now
+										Shop Female Shoes
 									</Link>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					{/* Banner 2 - Folded Shirts */}
-					<div className="min-w-full snap-center">
-						<div className="relative h-[500px]">
-							<img
-								src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1600&q=80"
-								alt="Folded Shirts"
-								className="h-full w-full object-cover"
-							/>
-							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
-							<div className="absolute inset-0 container-custom flex items-center">
-								<div className="max-w-xl space-y-4">
-									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
-										Bundle Deal
-									</span>
-									<h2 className="text-5xl font-black text-white lg:text-6xl">
-										5 Shirts in a Roll
-									</h2>
-									<p className="text-lg text-white/80">
-										Quality thrift shirts, neatly folded and ready to wear
-									</p>
-									<Link
-										href="/products?category=shirts"
-										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
-									>
-										Shop Now
-									</Link>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					{/* Banner 3 - Male Suits */}
-					<div className="min-w-full snap-center">
-						<div className="relative h-[500px]">
-							<img
-								src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=80"
-								alt="Suits and Corporate Wear"
-								className="h-full w-full object-cover"
-							/>
-							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
-							<div className="absolute inset-0 container-custom flex items-center">
-								<div className="max-w-xl space-y-4">
-									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
-										Male Collection
-									</span>
-									<h2 className="text-5xl font-black text-white lg:text-6xl">
-										Suits & Trainers
-									</h2>
-									<p className="text-lg text-white/80">
-										Smart office looks and street-ready trainers for every occasion
-									</p>
-									<Link
-										href="/products?category=suits"
-										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
-									>
-										Shop Now
-									</Link>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					{/* Banner 4 - Bags Collection */}
+					{/* Banner 4 - Bags */}
 					<div className="min-w-full snap-center">
 						<div className="relative h-[500px]">
 							<img
@@ -234,50 +242,56 @@ export default function Home() {
 							<div className="absolute inset-0 container-custom flex items-center">
 								<div className="max-w-xl space-y-4">
 									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
-										Trending Now
+										Hot Deals
 									</span>
 									<h2 className="text-5xl font-black text-white lg:text-6xl">
 										Designer Bags
 									</h2>
+									<p className="text-3xl font-black text-[#c88d00]">
+										BELOW ₦15K
+									</p>
 									<p className="text-lg text-white/80">
-										Totes, crossbody, and statement bags for every style
+										Quality bags that look brand new. Totes, handbags, and backpacks at okrika prices!
 									</p>
 									<Link
 										href="/products?category=bags"
 										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
 									>
-										Shop Now
+										Shop Bags
 									</Link>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					{/* Banner 5 - Accessories */}
+					{/* Banner 5 - Suits */}
 					<div className="min-w-full snap-center">
 						<div className="relative h-[500px]">
 							<img
-								src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1600&q=80"
-								alt="Accessories"
+								src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1600&q=80"
+								alt="Suits and Blazers"
 								className="h-full w-full object-cover"
 							/>
 							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
 							<div className="absolute inset-0 container-custom flex items-center">
 								<div className="max-w-xl space-y-4">
 									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
-										Complete Your Look
+										Professional Look
 									</span>
 									<h2 className="text-5xl font-black text-white lg:text-6xl">
-										Accessories
+										Suits & Blazers
 									</h2>
+									<p className="text-3xl font-black text-[#c88d00]">
+										SHOP BELOW ₦20K
+									</p>
 									<p className="text-lg text-white/80">
-										Watches, belts, jewelry, and more to elevate your outfit
+										Smart office suits and blazers for the professional look. Quality okrika formal wear!
 									</p>
 									<Link
-										href="/products?category=accessories"
+										href="/products?category=suits"
 										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
 									>
-										Shop Now
+										Shop Suits
 									</Link>
 								</div>
 							</div>
@@ -299,7 +313,7 @@ export default function Home() {
 
 				{/* Scroll Down Arrow */}
 				<a
-					href="#categories"
+					href="#special-offers"
 					className="absolute bottom-6 right-6 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition hover:bg-[#c88d00] group"
 				>
 					<svg
@@ -326,6 +340,166 @@ export default function Home() {
 								{item}
 							</Link>
 						))}
+					</div>
+				</div>
+			</section>
+
+			{/* Special Offers - BELOW ₦9K Section */}
+			<section id="special-offers" className="bg-gradient-to-br from-red-50 to-orange-50 py-12">
+				<div className="container-custom">
+					<div className="mb-8 text-center">
+						<span className="inline-block rounded-full bg-red-500 px-4 py-2 text-xs font-black uppercase tracking-wider text-white animate-pulse">
+							🔥 Hot Deals
+						</span>
+						<h2 className="mt-4 text-4xl font-black text-[#111111] sm:text-5xl">
+							SPECIAL OFFERS BELOW ₦9K
+						</h2>
+						<p className="mt-3 text-lg text-gray-700">
+							Quality okrika at unbeatable prices. Grab them before they're gone!
+						</p>
+					</div>
+
+					<div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+						{/* Product 1 */}
+						<Link
+							href="/products/prod-4"
+							className="group overflow-hidden rounded-2xl border-2 border-red-300 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+						>
+							<div className="relative h-64 overflow-hidden">
+								<img
+									src="/polo-shirts.jpg"
+									alt="Office Shirts Bundle"
+									className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+								/>
+								<span className="absolute left-3 top-3 rounded-full bg-red-500 px-3 py-1 text-xs font-black uppercase tracking-wider text-white">
+									Bundle Deal
+								</span>
+								<div className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1.5 text-sm font-black text-black">
+									₦7,500
+								</div>
+							</div>
+							<div className="p-4">
+								<h3 className="text-lg font-black text-[#111111]">Office Shirts Bundle</h3>
+								<p className="mt-1 text-sm text-[#5b5b5b]">3 Premium office shirts, neatly folded</p>
+								<div className="mt-3 flex items-center justify-between">
+									<div>
+										<p className="text-xs text-gray-500 line-through">₦15,000</p>
+										<p className="text-2xl font-black text-red-600">₦7,500</p>
+									</div>
+									<span className="rounded-full bg-red-500 px-4 py-2 text-xs font-black uppercase text-white">
+										Save 50%
+									</span>
+								</div>
+							</div>
+						</Link>
+
+						{/* Product 2 */}
+						<Link
+							href="/products/prod-6"
+							className="group overflow-hidden rounded-2xl border-2 border-red-300 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+						>
+							<div className="relative h-64 overflow-hidden">
+								<img
+									src="/polo-shirts.jpg"
+									alt="Casual Polo Shirts"
+									className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+								/>
+								<span className="absolute left-3 top-3 rounded-full bg-red-500 px-3 py-1 text-xs font-black uppercase tracking-wider text-white">
+									Best Seller
+								</span>
+								<div className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1.5 text-sm font-black text-black">
+									₦6,500
+								</div>
+							</div>
+							<div className="p-4">
+								<h3 className="text-lg font-black text-[#111111]">Casual Polo Shirts</h3>
+								<p className="mt-1 text-sm text-[#5b5b5b]">Quality polo shirts for everyday wear</p>
+								<div className="mt-3 flex items-center justify-between">
+									<div>
+										<p className="text-xs text-gray-500 line-through">₦12,000</p>
+										<p className="text-2xl font-black text-red-600">₦6,500</p>
+									</div>
+									<span className="rounded-full bg-red-500 px-4 py-2 text-xs font-black uppercase text-white">
+										Hot Deal
+									</span>
+								</div>
+							</div>
+						</Link>
+
+						{/* Product 3 */}
+						<Link
+							href="/products/prod-7"
+							className="group overflow-hidden rounded-2xl border-2 border-red-300 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+						>
+							<div className="relative h-64 overflow-hidden">
+								<img
+									src="https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=80"
+									alt="Straw Handbag"
+									className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+								/>
+								<span className="absolute left-3 top-3 rounded-full bg-red-500 px-3 py-1 text-xs font-black uppercase tracking-wider text-white">
+									Limited Stock
+								</span>
+								<div className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1.5 text-sm font-black text-black">
+									₦7,500
+								</div>
+							</div>
+							<div className="p-4">
+								<h3 className="text-lg font-black text-[#111111]">Straw Woven Handbag</h3>
+								<p className="mt-1 text-sm text-[#5b5b5b]">Eco-friendly handmade bag</p>
+								<div className="mt-3 flex items-center justify-between">
+									<div>
+										<p className="text-xs text-gray-500 line-through">₦12,000</p>
+										<p className="text-2xl font-black text-red-600">₦7,500</p>
+									</div>
+									<span className="rounded-full bg-red-500 px-4 py-2 text-xs font-black uppercase text-white">
+										Save Big
+									</span>
+								</div>
+							</div>
+						</Link>
+
+						{/* Product 4 */}
+						<Link
+							href="/products/prod-1"
+							className="group overflow-hidden rounded-2xl border-2 border-red-300 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+						>
+							<div className="relative h-64 overflow-hidden">
+								<img
+									src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=900&q=80"
+									alt="Ankara Skirt"
+									className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+								/>
+								<span className="absolute left-3 top-3 rounded-full bg-red-500 px-3 py-1 text-xs font-black uppercase tracking-wider text-white">
+									New Arrival
+								</span>
+								<div className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1.5 text-sm font-black text-black">
+									₦8,500
+								</div>
+							</div>
+							<div className="p-4">
+								<h3 className="text-lg font-black text-[#111111]">Ankara Wrap Skirt</h3>
+								<p className="mt-1 text-sm text-[#5b5b5b]">Beautiful Ankara print, premium fabric</p>
+								<div className="mt-3 flex items-center justify-between">
+									<div>
+										<p className="text-xs text-gray-500 line-through">₦15,000</p>
+										<p className="text-2xl font-black text-red-600">₦8,500</p>
+									</div>
+									<span className="rounded-full bg-red-500 px-4 py-2 text-xs font-black uppercase text-white">
+										Trending
+									</span>
+								</div>
+							</div>
+						</Link>
+					</div>
+
+					<div className="mt-8 text-center">
+						<Link
+							href="/products?max_price=9000"
+							className="inline-block rounded-full bg-red-500 px-8 py-3 text-sm font-black uppercase tracking-wide text-white transition hover:bg-red-600"
+						>
+							View All Special Offers
+						</Link>
 					</div>
 				</div>
 			</section>
@@ -630,9 +804,11 @@ export default function Home() {
 					{/* Brand Message Section */}
 					<div className="mb-12 rounded-3xl bg-gradient-to-br from-[#c88d00]/10 to-[#c88d00]/5 p-8 md:p-12">
 						<div className="max-w-3xl">
-							<div className="brand-wordmark mb-6 text-5xl tracking-[-0.15em] md:text-6xl">
-								Y<span className="text-[#c88d00]">A</span>BA<span className="text-[#c88d00]">RIGHT</span>
-							</div>
+							<img 
+								src="/logo.png" 
+								alt="YabaRight Logo" 
+								className="mb-6 h-16 w-auto md:h-20"
+							/>
 							<p className="text-lg leading-relaxed text-white/80 md:text-xl">
 								Thrifted style, fresh finds, and local deals for real people. Buy clean clothes, 
 								trainers, bags, jewelry, and accessories without breaking the bank.
@@ -650,9 +826,11 @@ export default function Home() {
 					{/* Footer Links */}
 					<div className="grid gap-8 md:grid-cols-4">
 						<div>
-							<div className="brand-wordmark mb-4 text-2xl tracking-[-0.15em]">
-								Y<span className="text-[#c88d00]">A</span>BA<span className="text-[#c88d00]">RIGHT</span>
-							</div>
+							<img 
+								src="/logo.png" 
+								alt="YabaRight Logo" 
+								className="mb-4 h-8 w-auto"
+							/>
 							<p className="text-sm text-white/70">
 								Thrift | New | Deals | Declutter | TradeOff
 							</p>
