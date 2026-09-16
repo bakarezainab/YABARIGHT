@@ -90,19 +90,19 @@ export default function Home() {
 	return (
 		<main className="min-h-screen bg-[#f5f0e8] text-[#121212]">
 			{/* Header - Fixed with clear logo visibility */}
-			<header className="sticky top-0 z-50 border-b border-[#c88d00]/30 bg-[#0b0b0b] shadow-lg">
+			<header className="sticky top-0 z-50 border-b border-[#FFD700]/30 bg-[#0b0b0b] shadow-lg">
 				<div className="container-custom flex items-center justify-between py-4">
 					<Link href="/" className="flex items-center gap-3">
 						<img 
 							src="/logo.png" 
 							alt="YabaRight Logo" 
-							className="h-14 w-auto sm:h-16"
+							className="h-16 w-auto sm:h-20"
 						/>
 					</Link>
 
 					<nav className="hidden items-center gap-6 text-sm font-bold text-white/80 md:flex">
 						{categoryPills.map((item) => (
-							<Link key={item} href="/products" className="transition hover:text-[#c88d00]">
+							<Link key={item} href="/products" className="transition hover:text-[#FFD700]">
 								{item}
 							</Link>
 						))}
@@ -111,13 +111,13 @@ export default function Home() {
 					<div className="flex items-center gap-3">
 						<Link
 							href="/login"
-							className="hidden text-sm font-semibold text-white/80 transition hover:text-[#c88d00] sm:inline-flex"
+							className="hidden text-sm font-semibold text-white/80 transition hover:text-[#FFD700] sm:inline-flex"
 						>
 							Login
 						</Link>
 						<Link
 							href="/products"
-							className="inline-flex rounded-full bg-[#c88d00] px-6 py-2.5 text-sm font-black text-[#131313] transition hover:-translate-y-0.5 hover:bg-[#ffcc00]"
+							className="inline-flex rounded-full bg-[#FFD700] px-6 py-2.5 text-sm font-black text-[#131313] transition hover:-translate-y-0.5 hover:bg-[#ffcc00]"
 						>
 							Shop now
 						</Link>
@@ -128,7 +128,7 @@ export default function Home() {
 			{/* Hero Banner Carousel - Multiple Product Banners */}
 			<section className="relative overflow-hidden bg-[#000000]">
 				<div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-					{/* Banner 1 - Your Best Plug for Casual Wears */}
+					{/* Banner 1 - Casual Wears */}
 					<div className="min-w-full snap-center">
 						<div className="relative h-[500px]">
 							<img
@@ -138,25 +138,30 @@ export default function Home() {
 							/>
 							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
 							<div className="absolute inset-0 container-custom flex items-center">
-								<div className="max-w-xl space-y-4">
-									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
-										Your Best Plug
-									</span>
-									<h2 className="text-5xl font-black text-white lg:text-6xl">
-										Casual Wears Below ₦10K
+								<div className="max-w-xl space-y-6">
+									<h2 className="text-5xl font-black text-white lg:text-6xl leading-tight">
+										YOUR STYLE, YOUR PRICE.
 									</h2>
-									<p className="text-xl font-bold text-[#c88d00]">
-										Quality pre owned • Affordable Prices • Fresh Stock
+									<p className="text-4xl font-black text-[#FFD700] lg:text-5xl">
+										CASUAL WEARS
 									</p>
-									<p className="text-lg text-white/80">
-										Shop the best casual wears at unbeatable prices. Your best plug for affordable fashion!
+									<p className="text-3xl font-black text-[#FFD700]">
+										SHOP BELOW ₦10K
 									</p>
-									<Link
-										href="/products?category=casual"
-										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
-									>
-										Shop Casual Wears
-									</Link>
+									<div className="flex gap-4">
+										<Link
+											href="/products?category=casual&condition=pre-owned"
+											className="inline-block rounded-full bg-white px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-gray-200"
+										>
+											Pre-owned
+										</Link>
+										<Link
+											href="/products?category=casual&condition=new"
+											className="inline-block rounded-full bg-[#FFD700] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#FFC700]"
+										>
+											New
+										</Link>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -166,31 +171,36 @@ export default function Home() {
 					<div className="min-w-full snap-center">
 						<div className="relative h-[500px]">
 							<img
-								src="/polo-shirts.jpg"
-								alt="Office Shirts - Polo Collection"
+								src="/casual-shirts-stack.jpg"
+								alt="Office Shirts"
 								className="h-full w-full object-cover"
 							/>
 							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
 							<div className="absolute inset-0 container-custom flex items-center">
-								<div className="max-w-xl space-y-4">
-									<span className="inline-block rounded-full bg-red-500 px-4 py-1.5 text-xs font-black uppercase tracking-wider text-white animate-pulse">
-										Special Offers
-									</span>
-									<h2 className="text-5xl font-black text-white lg:text-6xl">
-										Office Shirts
+								<div className="max-w-xl space-y-6">
+									<h2 className="text-5xl font-black text-white lg:text-6xl leading-tight">
+										DESIGNER LOOKS. EVERYDAY PRICES.
 									</h2>
-									<p className="text-3xl font-black text-[#c88d00]">
+									<p className="text-4xl font-black text-[#FFD700] lg:text-5xl">
+										OFFICE SHIRTS
+									</p>
+									<p className="text-3xl font-black text-[#FFD700]">
 										SHOP BELOW ₦10K
 									</p>
-									<p className="text-lg text-white/80">
-										Quality office shirts, neatly folded and ready for work. Get professional looks at pre owned prices!
-									</p>
-									<Link
-										href="/products?category=shirts"
-										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
-									>
-										Shop Office Shirts
-									</Link>
+									<div className="flex gap-4">
+										<Link
+											href="/products?category=shirts&condition=pre-owned"
+											className="inline-block rounded-full bg-white px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-gray-200"
+										>
+											Pre-owned
+										</Link>
+										<Link
+											href="/products?category=shirts&condition=new"
+											className="inline-block rounded-full bg-[#FFD700] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#FFC700]"
+										>
+											New
+										</Link>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -206,25 +216,30 @@ export default function Home() {
 							/>
 							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
 							<div className="absolute inset-0 container-custom flex items-center">
-								<div className="max-w-xl space-y-4">
-									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
-										Female Collection
-									</span>
-									<h2 className="text-5xl font-black text-white lg:text-6xl">
-										Female Shoes
+								<div className="max-w-xl space-y-6">
+									<h2 className="text-5xl font-black text-white lg:text-6xl leading-tight">
+										WEAR THE LOOK. OWN THE CONFIDENCE.
 									</h2>
-									<p className="text-3xl font-black text-[#c88d00]">
-										FROM ₦5K
+									<p className="text-4xl font-black text-[#FFD700] lg:text-5xl">
+										FEMALE SHOES
 									</p>
-									<p className="text-lg text-white/80">
-										Heels, sandals, and sneakers at affordable prices. Step out in style without breaking the bank!
+									<p className="text-3xl font-black text-[#FFD700]">
+										₦9,999
 									</p>
-									<Link
-										href="/products?category=shoes"
-										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
-									>
-										Shop Female Shoes
-									</Link>
+									<div className="flex gap-4">
+										<Link
+											href="/products?category=shoes&condition=pre-owned"
+											className="inline-block rounded-full bg-white px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-gray-200"
+										>
+											Pre-owned
+										</Link>
+										<Link
+											href="/products?category=shoes&condition=new"
+											className="inline-block rounded-full bg-[#FFD700] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#FFC700]"
+										>
+											New
+										</Link>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -240,31 +255,36 @@ export default function Home() {
 							/>
 							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
 							<div className="absolute inset-0 container-custom flex items-center">
-								<div className="max-w-xl space-y-4">
-									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
-										Hot Deals
-									</span>
-									<h2 className="text-5xl font-black text-white lg:text-6xl">
-										Designer Bags
+								<div className="max-w-xl space-y-6">
+									<h2 className="text-5xl font-black text-white lg:text-6xl leading-tight">
+										LOOK GOOD. PAY LESS.
 									</h2>
-									<p className="text-3xl font-black text-[#c88d00]">
-										BELOW ₦15K
+									<p className="text-4xl font-black text-[#FFD700] lg:text-5xl">
+										DESIGNER BAGS
 									</p>
-									<p className="text-lg text-white/80">
-										Quality bags that look brand new. Totes, handbags, and backpacks at pre owned prices!
+									<p className="text-3xl font-black text-[#FFD700]">
+										SHOP BELOW ₦15K
 									</p>
-									<Link
-										href="/products?category=bags"
-										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
-									>
-										Shop Bags
-									</Link>
+									<div className="flex gap-4">
+										<Link
+											href="/products?category=bags&condition=pre-owned"
+											className="inline-block rounded-full bg-white px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-gray-200"
+										>
+											Pre-owned
+										</Link>
+										<Link
+											href="/products?category=bags&condition=new"
+											className="inline-block rounded-full bg-[#FFD700] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#FFC700]"
+										>
+											New
+										</Link>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 
-					{/* Banner 5 - Suits */}
+					{/* Banner 5 - Suits & Blazers */}
 					<div className="min-w-full snap-center">
 						<div className="relative h-[500px]">
 							<img
@@ -274,25 +294,69 @@ export default function Home() {
 							/>
 							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
 							<div className="absolute inset-0 container-custom flex items-center">
-								<div className="max-w-xl space-y-4">
-									<span className="inline-block rounded-full bg-[#c88d00] px-4 py-1.5 text-xs font-black uppercase tracking-wider text-black">
-										Professional Look
-									</span>
-									<h2 className="text-5xl font-black text-white lg:text-6xl">
-										Suits & Blazers
+								<div className="max-w-xl space-y-6">
+									<h2 className="text-5xl font-black text-white lg:text-6xl leading-tight">
+										ELEVATE YOUR LOOK. NOT YOUR BUDGET.
 									</h2>
-									<p className="text-3xl font-black text-[#c88d00]">
+									<p className="text-4xl font-black text-[#FFD700] lg:text-5xl">
+										SUITS & BLAZERS
+									</p>
+									<p className="text-3xl font-black text-[#FFD700]">
 										SHOP BELOW ₦20K
 									</p>
-									<p className="text-lg text-white/80">
-										Smart office suits and blazers for the professional look. Quality pre owned formal wear!
+									<div className="flex gap-4">
+										<Link
+											href="/products?category=suits&condition=pre-owned"
+											className="inline-block rounded-full bg-white px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-gray-200"
+										>
+											Pre-owned
+										</Link>
+										<Link
+											href="/products?category=suits&condition=new"
+											className="inline-block rounded-full bg-[#FFD700] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#FFC700]"
+										>
+											New
+										</Link>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{/* Banner 6 - Jeans */}
+					<div className="min-w-full snap-center">
+						<div className="relative h-[500px]">
+							<img
+								src="/jeans-stack.jpg"
+								alt="Jeans Collection"
+								className="h-full w-full object-cover"
+							/>
+							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
+							<div className="absolute inset-0 container-custom flex items-center">
+								<div className="max-w-xl space-y-6">
+									<h2 className="text-5xl font-black text-white lg:text-6xl leading-tight">
+										YOUR NEXT FIT IS HERE.
+									</h2>
+									<p className="text-4xl font-black text-[#FFD700] lg:text-5xl">
+										JEANS
 									</p>
-									<Link
-										href="/products?category=suits"
-										className="inline-block rounded-full bg-[#c88d00] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#ffcc00]"
-									>
-										Shop Suits
-									</Link>
+									<p className="text-3xl font-black text-[#FFD700]">
+										₦9,999
+									</p>
+									<div className="flex gap-4">
+										<Link
+											href="/products?category=jeans&condition=pre-owned"
+											className="inline-block rounded-full bg-white px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-gray-200"
+										>
+											Pre-owned
+										</Link>
+										<Link
+											href="/products?category=jeans&condition=new"
+											className="inline-block rounded-full bg-[#FFD700] px-8 py-3 text-sm font-black uppercase tracking-wide text-black transition hover:bg-[#FFC700]"
+										>
+											New
+										</Link>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -301,11 +365,11 @@ export default function Home() {
 
 				{/* Scroll Indicator */}
 				<div className="absolute bottom-6 left-1/2 z-20 flex -translate-x-1/2 gap-2">
-					{[1, 2, 3, 4, 5].map((_, index) => (
+					{[1, 2, 3, 4, 5, 6].map((_, index) => (
 						<div
 							key={index}
 							className={`h-2 rounded-full transition-all ${
-								index === 0 ? 'w-8 bg-[#c88d00]' : 'w-2 bg-white/40'
+								index === 0 ? 'w-8 bg-[#FFD700]' : 'w-2 bg-white/40'
 							}`}
 						/>
 					))}
@@ -314,7 +378,7 @@ export default function Home() {
 				{/* Scroll Down Arrow */}
 				<a
 					href="#special-offers"
-					className="absolute bottom-6 right-6 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition hover:bg-[#c88d00] group"
+					className="absolute bottom-6 right-6 z-20 flex h-12 w-12 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition hover:bg-[#FFD700] group"
 				>
 					<svg
 						className="h-6 w-6 animate-bounce text-white group-hover:text-black"
@@ -335,7 +399,7 @@ export default function Home() {
 							<Link
 								key={item}
 								href={`/products?category=${item.toLowerCase()}`}
-								className="rounded-full border border-[#c88d00]/40 bg-[#c88d00]/10 px-5 py-2 text-xs font-black uppercase tracking-wider text-[#c88d00] transition hover:bg-[#c88d00] hover:text-black"
+								className="rounded-full border border-[#FFD700]/40 bg-[#FFD700]/10 px-5 py-2 text-xs font-black uppercase tracking-wider text-[#FFD700] transition hover:bg-[#FFD700] hover:text-black"
 							>
 								{item}
 							</Link>
@@ -374,7 +438,7 @@ export default function Home() {
 								<span className="absolute left-3 top-3 rounded-full bg-red-500 px-3 py-1 text-xs font-black uppercase tracking-wider text-white">
 									Bundle Deal
 								</span>
-								<div className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1.5 text-sm font-black text-black">
+								<div className="absolute right-3 top-3 rounded-full bg-[#FFD700] px-3 py-1.5 text-sm font-black text-black">
 									₦5,000
 								</div>
 							</div>
@@ -407,7 +471,7 @@ export default function Home() {
 								<span className="absolute left-3 top-3 rounded-full bg-red-500 px-3 py-1 text-xs font-black uppercase tracking-wider text-white">
 									Best Seller
 								</span>
-								<div className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1.5 text-sm font-black text-black">
+								<div className="absolute right-3 top-3 rounded-full bg-[#FFD700] px-3 py-1.5 text-sm font-black text-black">
 									₦4,500
 								</div>
 							</div>
@@ -440,7 +504,7 @@ export default function Home() {
 								<span className="absolute left-3 top-3 rounded-full bg-red-500 px-3 py-1 text-xs font-black uppercase tracking-wider text-white">
 									Limited Stock
 								</span>
-								<div className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1.5 text-sm font-black text-black">
+								<div className="absolute right-3 top-3 rounded-full bg-[#FFD700] px-3 py-1.5 text-sm font-black text-black">
 									₦6,000
 								</div>
 							</div>
@@ -473,7 +537,7 @@ export default function Home() {
 								<span className="absolute left-3 top-3 rounded-full bg-red-500 px-3 py-1 text-xs font-black uppercase tracking-wider text-white">
 									New Arrival
 								</span>
-								<div className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1.5 text-sm font-black text-black">
+								<div className="absolute right-3 top-3 rounded-full bg-[#FFD700] px-3 py-1.5 text-sm font-black text-black">
 									₦7,000
 								</div>
 							</div>
@@ -508,7 +572,7 @@ export default function Home() {
 			<section id="categories" className="container-custom py-12">
 				<div className="mb-8 flex items-end justify-between gap-4">
 					<div>
-						<p className="text-xs font-black uppercase tracking-[0.24em] text-[#c88d00]">
+						<p className="text-xs font-black uppercase tracking-[0.24em] text-[#FFD700]">
 							Browse by Category
 						</p>
 						<h2 className="mt-2 text-3xl font-black text-[#111111] sm:text-4xl">
@@ -517,7 +581,7 @@ export default function Home() {
 					</div>
 					<Link
 						href="/products"
-						className="text-sm font-black text-[#111111] hover:text-[#c88d00]"
+						className="text-sm font-black text-[#111111] hover:text-[#FFD700]"
 					>
 						View All →
 					</Link>
@@ -543,7 +607,7 @@ export default function Home() {
 							</div>
 							<div className="p-3">
 								<p className="text-xs text-[#575757]">{category.subtitle}</p>
-								<p className="mt-1 text-xs font-bold text-[#c88d00]">{category.count}</p>
+								<p className="mt-1 text-xs font-bold text-[#FFD700]">{category.count}</p>
 							</div>
 						</Link>
 					))}
@@ -555,7 +619,7 @@ export default function Home() {
 				<div className="container-custom">
 					<div className="mb-8 flex items-end justify-between gap-4">
 						<div>
-							<p className="text-xs font-black uppercase tracking-[0.24em] text-[#c88d00]">
+							<p className="text-xs font-black uppercase tracking-[0.24em] text-[#FFD700]">
 								Top Sellers
 							</p>
 							<h2 className="mt-2 text-3xl font-black text-[#111111] sm:text-4xl">
@@ -564,7 +628,7 @@ export default function Home() {
 						</div>
 						<Link
 							href="/products"
-							className="rounded-full bg-[#c88d00] px-5 py-2 text-sm font-black uppercase tracking-wide text-[#111] transition hover:bg-[#ffcc00]"
+							className="rounded-full bg-[#FFD700] px-5 py-2 text-sm font-black uppercase tracking-wide text-[#111] transition hover:bg-[#ffcc00]"
 						>
 							Shop All
 						</Link>
@@ -584,7 +648,7 @@ export default function Home() {
 										className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
 									/>
 									{product.trending && (
-										<span className="absolute right-3 top-3 rounded-full bg-[#c88d00] px-3 py-1 text-[10px] font-black uppercase tracking-wider text-[#111111]">
+										<span className="absolute right-3 top-3 rounded-full bg-[#FFD700] px-3 py-1 text-[10px] font-black uppercase tracking-wider text-[#111111]">
 											Trending
 										</span>
 									)}
@@ -614,7 +678,7 @@ export default function Home() {
 												</p>
 											)}
 										</div>
-										<span className="rounded-full bg-[#c88d00] px-4 py-2 text-xs font-black uppercase tracking-wide text-[#111] transition group-hover:bg-[#ffcc00]">
+										<span className="rounded-full bg-[#FFD700] px-4 py-2 text-xs font-black uppercase tracking-wide text-[#111] transition group-hover:bg-[#ffcc00]">
 											View
 										</span>
 									</div>
@@ -629,7 +693,7 @@ export default function Home() {
 			<section className="container-custom py-12">
 				<div className="mb-8 flex items-end justify-between gap-4">
 					<div>
-						<p className="text-xs font-black uppercase tracking-[0.24em] text-[#c88d00]">
+						<p className="text-xs font-black uppercase tracking-[0.24em] text-[#FFD700]">
 							Curated for You
 						</p>
 						<h2 className="mt-2 text-3xl font-black text-[#111111] sm:text-4xl">
@@ -666,7 +730,7 @@ export default function Home() {
 			<section className="py-12">
 				<div className="container-custom">
 					<div className="mb-8 text-center">
-						<p className="text-xs font-black uppercase tracking-[0.24em] text-[#c88d00]">
+						<p className="text-xs font-black uppercase tracking-[0.24em] text-[#FFD700]">
 							Shop by Gender
 						</p>
 						<h2 className="mt-2 text-3xl font-black text-[#111111] sm:text-4xl">
@@ -692,7 +756,7 @@ export default function Home() {
 								<div className="absolute bottom-6 left-6 right-6">
 									<p className="text-3xl font-black text-white">{spot.label}</p>
 									<p className="mt-2 text-sm text-white/80">{spot.description}</p>
-									<span className="mt-4 inline-block rounded-full bg-white px-6 py-2 text-sm font-black uppercase tracking-wide text-[#111] transition group-hover:bg-[#c88d00]">
+									<span className="mt-4 inline-block rounded-full bg-white px-6 py-2 text-sm font-black uppercase tracking-wide text-[#111] transition group-hover:bg-[#FFD700]">
 										Shop Now
 									</span>
 								</div>
@@ -706,7 +770,7 @@ export default function Home() {
 			<section className="bg-white py-12">
 				<div className="container-custom">
 					<div className="mb-8 text-center">
-						<p className="text-xs font-black uppercase tracking-[0.24em] text-[#c88d00]">
+						<p className="text-xs font-black uppercase tracking-[0.24em] text-[#FFD700]">
 							Why YabaRight?
 						</p>
 						<h2 className="mt-2 text-3xl font-black text-[#111111] sm:text-4xl">
@@ -741,7 +805,7 @@ export default function Home() {
 								key={index}
 								className="rounded-2xl border border-[#e8e0d5] bg-[#f9f5f0] p-6 text-center"
 							>
-								<div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#c88d00]/20 text-3xl">
+								<div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#FFD700]/20 text-3xl">
 									{item.icon}
 								</div>
 								<h3 className="text-lg font-black text-[#111]">{item.title}</h3>
@@ -757,19 +821,19 @@ export default function Home() {
 				<div className="overflow-hidden rounded-3xl bg-[#111111] p-8 text-white md:p-12">
 					<div className="grid gap-8 md:grid-cols-4">
 						<div className="text-center">
-							<p className="text-4xl font-black text-[#c88d00] md:text-5xl">5,000+</p>
+							<p className="text-4xl font-black text-[#FFD700] md:text-5xl">5,000+</p>
 							<p className="mt-2 text-sm text-white/70">Active Products</p>
 						</div>
 						<div className="text-center">
-							<p className="text-4xl font-black text-[#c88d00] md:text-5xl">2,500+</p>
+							<p className="text-4xl font-black text-[#FFD700] md:text-5xl">2,500+</p>
 							<p className="mt-2 text-sm text-white/70">Verified Sellers</p>
 						</div>
 						<div className="text-center">
-							<p className="text-4xl font-black text-[#c88d00] md:text-5xl">10,000+</p>
+							<p className="text-4xl font-black text-[#FFD700] md:text-5xl">10,000+</p>
 							<p className="mt-2 text-sm text-white/70">Happy Customers</p>
 						</div>
 						<div className="text-center">
-							<p className="text-4xl font-black text-[#c88d00] md:text-5xl">36</p>
+							<p className="text-4xl font-black text-[#FFD700] md:text-5xl">36</p>
 							<p className="mt-2 text-sm text-white/70">States Covered</p>
 						</div>
 					</div>
@@ -778,7 +842,7 @@ export default function Home() {
 
 			{/* CTA Banner */}
 			<section className="container-custom pb-12">
-				<div className="overflow-hidden rounded-3xl bg-gradient-to-r from-[#c88d00] to-[#e8941f] p-8 md:p-12">
+				<div className="overflow-hidden rounded-3xl bg-gradient-to-r from-[#FFD700] to-[#e8941f] p-8 md:p-12">
 					<div className="flex flex-col items-center justify-between gap-6 md:flex-row">
 						<div>
 							<h2 className="text-2xl font-black text-white md:text-3xl">
@@ -799,15 +863,15 @@ export default function Home() {
 			</section>
 
 			{/* Footer */}
-			<footer className="border-t border-[#c88d00]/30 bg-[#0b0b0b] py-12 text-white">
+			<footer className="border-t border-[#FFD700]/30 bg-[#0b0b0b] py-12 text-white">
 				<div className="container-custom">
 					{/* Brand Message Section */}
-					<div className="mb-12 rounded-3xl bg-gradient-to-br from-[#c88d00]/10 to-[#c88d00]/5 p-8 md:p-12">
+					<div className="mb-12 rounded-3xl bg-gradient-to-br from-[#FFD700]/10 to-[#FFD700]/5 p-8 md:p-12">
 						<div className="max-w-4xl">
 							<img 
 								src="/logo.png" 
 								alt="YabaRight Logo" 
-								className="mb-6 h-16 w-auto md:h-20"
+								className="mb-6 h-20 w-auto md:h-24"
 							/>
 							<div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 								<p className="text-lg font-black text-white">LOOK RICH. SPEND SMART.</p>
@@ -819,7 +883,7 @@ export default function Home() {
 								<p className="text-lg font-black text-white">LOOK GOOD. PAY LESS.</p>
 								<p className="text-lg font-black text-white">YOUR NEXT FIT IS HERE.</p>
 								<p className="text-lg font-black text-white">STYLE SHOULDN'T BE EXPENSIVE.</p>
-								<p className="text-lg font-black text-[#c88d00]">AFFORDABLE. STYLISH. YABARIGHT.</p>
+								<p className="text-lg font-black text-[#FFD700]">AFFORDABLE. STYLISH. YABARIGHT.</p>
 								<p className="text-lg font-black text-white">THE LOOK YOU WANT. THE PRICE YOU CAN AFFORD.</p>
 								<p className="text-lg font-black text-white">ELEVATE YOUR LOOK. NOT YOUR BUDGET.</p>
 							</div>
@@ -832,7 +896,7 @@ export default function Home() {
 							<img 
 								src="/logo.png" 
 								alt="YabaRight Logo" 
-								className="mb-4 h-8 w-auto"
+								className="mb-4 h-12 w-auto"
 							/>
 							<p className="text-sm text-white/70">
 								Thrift | New | Deals | Declutter | TradeOff
@@ -842,30 +906,30 @@ export default function Home() {
 							</p>
 						</div>
 						<div>
-							<h4 className="mb-4 font-bold text-[#c88d00]">Shop</h4>
+							<h4 className="mb-4 font-bold text-[#FFD700]">Shop</h4>
 							<ul className="space-y-2 text-sm text-white/70">
-								<li><Link href="/products" className="hover:text-[#c88d00]">All Products</Link></li>
-								<li><Link href="/products?category=thrift" className="hover:text-[#c88d00]">Thrift</Link></li>
-								<li><Link href="/products?category=new" className="hover:text-[#c88d00]">New Arrivals</Link></li>
-								<li><Link href="/products?category=deals" className="hover:text-[#c88d00]">Deals</Link></li>
+								<li><Link href="/products" className="hover:text-[#FFD700]">All Products</Link></li>
+								<li><Link href="/products?category=thrift" className="hover:text-[#FFD700]">Thrift</Link></li>
+								<li><Link href="/products?category=new" className="hover:text-[#FFD700]">New Arrivals</Link></li>
+								<li><Link href="/products?category=deals" className="hover:text-[#FFD700]">Deals</Link></li>
 							</ul>
 						</div>
 						<div>
-							<h4 className="mb-4 font-bold text-[#c88d00]">Categories</h4>
+							<h4 className="mb-4 font-bold text-[#FFD700]">Categories</h4>
 							<ul className="space-y-2 text-sm text-white/70">
-								<li><Link href="/products?category=shoes" className="hover:text-[#c88d00]">Shoes</Link></li>
-								<li><Link href="/products?category=bags" className="hover:text-[#c88d00]">Bags</Link></li>
-								<li><Link href="/products?category=clothes" className="hover:text-[#c88d00]">Clothes</Link></li>
-								<li><Link href="/products?category=shirts" className="hover:text-[#c88d00]">Shirts</Link></li>
+								<li><Link href="/products?category=shoes" className="hover:text-[#FFD700]">Shoes</Link></li>
+								<li><Link href="/products?category=bags" className="hover:text-[#FFD700]">Bags</Link></li>
+								<li><Link href="/products?category=clothes" className="hover:text-[#FFD700]">Clothes</Link></li>
+								<li><Link href="/products?category=shirts" className="hover:text-[#FFD700]">Shirts</Link></li>
 							</ul>
 						</div>
 						<div>
-							<h4 className="mb-4 font-bold text-[#c88d00]">Account</h4>
+							<h4 className="mb-4 font-bold text-[#FFD700]">Account</h4>
 							<ul className="space-y-2 text-sm text-white/70">
-								<li><Link href="/login" className="hover:text-[#c88d00]">Login</Link></li>
-								<li><Link href="/register" className="hover:text-[#c88d00]">Register</Link></li>
-								<li><Link href="/cart" className="hover:text-[#c88d00]">Cart</Link></li>
-								<li><Link href="/wishlist" className="hover:text-[#c88d00]">Wishlist</Link></li>
+								<li><Link href="/login" className="hover:text-[#FFD700]">Login</Link></li>
+								<li><Link href="/register" className="hover:text-[#FFD700]">Register</Link></li>
+								<li><Link href="/cart" className="hover:text-[#FFD700]">Cart</Link></li>
+								<li><Link href="/wishlist" className="hover:text-[#FFD700]">Wishlist</Link></li>
 							</ul>
 						</div>
 					</div>

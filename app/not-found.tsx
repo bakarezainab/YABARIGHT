@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <main className="flex min-h-screen flex-col bg-[#f5f0e8]">
       {/* Header - Matching Homepage Style */}
-      <header className="border-b border-[#c88d00]/30 bg-[#0b0b0b] shadow-lg">
+      <header className="border-b border-[#FFD700]/30 bg-[#0b0b0b] shadow-lg">
         <div className="container-custom flex items-center justify-between py-4">
           <Link href="/" className="flex items-center">
             <img 
@@ -15,12 +15,12 @@ export default function NotFound() {
           </Link>
 
           <nav className="flex items-center gap-4">
-            <Link href="/products" className="text-sm font-bold text-white/80 transition hover:text-[#c88d00]">
+            <Link href="/products" className="text-sm font-bold text-white/80 transition hover:text-[#FFD700]">
               Browse Products
             </Link>
             <Link
               href="/"
-              className="rounded-full bg-[#c88d00] px-5 py-2 text-sm font-black text-black transition hover:bg-[#ffcc00]"
+              className="rounded-full bg-[#FFD700] px-5 py-2 text-sm font-black text-black transition hover:bg-[#ffcc00]"
             >
               Home
             </Link>
@@ -30,8 +30,8 @@ export default function NotFound() {
 
       <div className="flex flex-1 items-center justify-center px-4">
         <div className="max-w-lg rounded-[2rem] border border-black/5 bg-white p-8 text-center shadow-[0_25px_80px_rgba(0,0,0,0.08)] sm:p-10">
-          <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-[#c88d00]/10">
-            <p className="text-5xl font-black text-[#c88d00]">404</p>
+          <div className="mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-[#FFD700]/10">
+            <p className="text-5xl font-black text-[#FFD700]">404</p>
           </div>
           <h1 className="text-4xl font-black text-secondary">Page not found</h1>
           <p className="mt-3 text-gray-600">
@@ -47,7 +47,7 @@ export default function NotFound() {
             </Link>
             <Link
               href="/products"
-              className="rounded-full border border-[#0b0b0b] bg-[#c88d00] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffcc00]"
+              className="rounded-full border border-[#0b0b0b] bg-[#FFD700] px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#ffcc00]"
             >
               Browse products
             </Link>

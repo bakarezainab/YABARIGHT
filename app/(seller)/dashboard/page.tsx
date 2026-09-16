@@ -183,7 +183,7 @@ export default function SellerDashboardPage() {
 				{/* Welcome Section */}
 				<div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 					<div>
-						<p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#c88d00]">
+						<p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#FFD700]">
 							Seller Dashboard
 						</p>
 						<h1 className="mt-2 text-3xl font-black text-secondary sm:text-4xl">
@@ -195,7 +195,7 @@ export default function SellerDashboardPage() {
 					</div>
 					<Link
 						href="/products/new"
-						className="inline-flex items-center justify-center gap-2 rounded-full bg-[#c88d00] px-6 py-3 text-sm font-bold text-black transition hover:bg-[#ffcc00] hover:shadow-lg hover:translate-y-[-2px]"
+						className="inline-flex items-center justify-center gap-2 rounded-full bg-[#FFD700] px-6 py-3 text-sm font-bold text-black transition hover:bg-[#ffcc00] hover:shadow-lg hover:translate-y-[-2px]"
 					>
 						<span className="text-lg">+</span>
 						Add New Product
@@ -207,7 +207,7 @@ export default function SellerDashboardPage() {
 					{stats.map((stat) => (
 						<div 
 							key={stat.label} 
-							className="group rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition hover:shadow-lg hover:border-[#c88d00]/30"
+							className="group rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition hover:shadow-lg hover:border-[#FFD700]/30"
 						>
 							<div className="flex items-start justify-between">
 								<div className="flex-1">
@@ -234,7 +234,7 @@ export default function SellerDashboardPage() {
 								<h2 className="text-2xl font-black text-secondary">Recent Products</h2>
 								<Link 
 									href="/products/new" 
-									className="text-sm font-bold text-[#c88d00] transition hover:text-[#a06f00]"
+									className="text-sm font-bold text-[#FFD700] transition hover:text-[#a06f00]"
 								>
 									View All →
 								</Link>
@@ -244,7 +244,7 @@ export default function SellerDashboardPage() {
 								{recentProducts.map((product) => (
 									<div
 										key={product.id}
-										className="group flex items-center gap-4 rounded-xl border border-gray-100 bg-[#f5f0e8] p-4 transition hover:border-[#c88d00]/30 hover:shadow-md"
+										className="group flex items-center gap-4 rounded-xl border border-gray-100 bg-[#f5f0e8] p-4 transition hover:border-[#FFD700]/30 hover:shadow-md"
 									>
 										{/* Product Image */}
 										<div className="flex h-16 w-16 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg bg-white">
@@ -275,7 +275,7 @@ export default function SellerDashboardPage() {
 
 										{/* Price and Actions */}
 										<div className="flex flex-col items-end gap-2">
-											<p className="text-lg font-black text-[#c88d00]">
+											<p className="text-lg font-black text-[#FFD700]">
 												{formatCurrency(product.price!)}
 											</p>
 											<div className="flex gap-2">
@@ -316,7 +316,7 @@ export default function SellerDashboardPage() {
 								{[65, 45, 80, 55, 70, 90, 75].map((height, index) => (
 									<div key={index} className="flex flex-1 flex-col items-center gap-2">
 										<div 
-											className="w-full rounded-t-lg bg-gradient-to-t from-[#c88d00] to-[#ffcc00] transition hover:opacity-80"
+											className="w-full rounded-t-lg bg-gradient-to-t from-[#FFD700] to-[#ffcc00] transition hover:opacity-80"
 											style={{ height: `${height}%` }}
 										/>
 										<span className="text-xs font-semibold text-gray-500">
@@ -350,7 +350,7 @@ export default function SellerDashboardPage() {
 					<div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
 						<div className="mb-6 flex items-center justify-between">
 							<h2 className="text-2xl font-black text-secondary">Recent Orders</h2>
-							<button className="text-sm font-bold text-[#c88d00] transition hover:text-[#a06f00]">
+							<button className="text-sm font-bold text-[#FFD700] transition hover:text-[#a06f00]">
 								View All Orders →
 							</button>
 						</div>
@@ -382,7 +382,7 @@ export default function SellerDashboardPage() {
 											</td>
 											<td className="py-4 text-gray-600">{order.shippingCity}</td>
 											<td className="py-4">
-												<span className="font-black text-[#c88d00]">
+												<span className="font-black text-[#FFD700]">
 													{formatCurrency(order.total!)}
 												</span>
 											</td>
@@ -392,7 +392,7 @@ export default function SellerDashboardPage() {
 												</span>
 											</td>
 											<td className="py-4 text-right">
-												<button className="text-sm font-semibold text-[#c88d00] transition hover:text-[#a06f00]">
+												<button className="text-sm font-semibold text-[#FFD700] transition hover:text-[#a06f00]">
 													View Details →
 												</button>
 											</td>
@@ -423,11 +423,11 @@ export default function SellerDashboardPage() {
 									<div className="flex items-center justify-between">
 										<div>
 											<p className="text-xs text-gray-600">{order.shippingCity}</p>
-											<p className="mt-1 text-lg font-black text-[#c88d00]">
+											<p className="mt-1 text-lg font-black text-[#FFD700]">
 												{formatCurrency(order.total!)}
 											</p>
 										</div>
-										<button className="text-xs font-semibold text-[#c88d00] transition hover:text-[#a06f00]">
+										<button className="text-xs font-semibold text-[#FFD700] transition hover:text-[#a06f00]">
 											View →
 										</button>
 									</div>
@@ -441,9 +441,9 @@ export default function SellerDashboardPage() {
 				<section className="mt-6 grid gap-4 sm:grid-cols-3">
 					<Link 
 						href="/products/new"
-						className="group flex items-center gap-4 rounded-2xl border border-[#c88d00]/30 bg-white p-6 shadow-sm transition hover:shadow-lg hover:border-[#c88d00]"
+						className="group flex items-center gap-4 rounded-2xl border border-[#FFD700]/30 bg-white p-6 shadow-sm transition hover:shadow-lg hover:border-[#FFD700]"
 					>
-						<div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#c88d00]/10 text-3xl">
+						<div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#FFD700]/10 text-3xl">
 							➕
 						</div>
 						<div>
@@ -453,7 +453,7 @@ export default function SellerDashboardPage() {
 					</Link>
 
 					<button 
-						className="group flex items-center gap-4 rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition hover:shadow-lg hover:border-[#c88d00]/30"
+						className="group flex items-center gap-4 rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition hover:shadow-lg hover:border-[#FFD700]/30"
 					>
 						<div className="flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 text-3xl">
 							📊
@@ -465,7 +465,7 @@ export default function SellerDashboardPage() {
 					</button>
 
 					<button 
-						className="group flex items-center gap-4 rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition hover:shadow-lg hover:border-[#c88d00]/30"
+						className="group flex items-center gap-4 rounded-2xl border border-black/10 bg-white p-6 shadow-sm transition hover:shadow-lg hover:border-[#FFD700]/30"
 					>
 						<div className="flex h-14 w-14 items-center justify-center rounded-xl bg-green-50 text-3xl">
 							⚙️

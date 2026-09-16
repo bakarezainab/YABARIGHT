@@ -9,23 +9,23 @@ export default function AuthLayout({
   return (
     <div className="min-h-screen bg-[#f5f0e8] px-4 py-8 sm:px-6 lg:px-8">
       {/* Header - Matching Homepage Style */}
-      <header className="fixed top-0 left-0 right-0 z-50 border-b border-[#c88d00]/30 bg-[#0b0b0b] shadow-lg">
+      <header className="fixed top-0 left-0 right-0 z-50 border-b border-[#FFD700]/30 bg-[#0b0b0b] shadow-lg">
         <div className="container-custom flex items-center justify-between py-4">
           <Link href="/" className="flex items-center">
             <img 
               src="/logo.png" 
               alt="YabaRight Logo" 
-              className="h-12 w-auto sm:h-14"
+              className="h-16 w-auto sm:h-20"
             />
           </Link>
 
           <nav className="flex items-center gap-4">
-            <Link href="/products" className="text-sm font-bold text-white/80 transition hover:text-[#c88d00]">
+            <Link href="/products" className="text-sm font-bold text-white/80 transition hover:text-[#FFD700]">
               Browse Products
             </Link>
             <Link
               href="/"
-              className="rounded-full bg-[#c88d00] px-5 py-2 text-sm font-black text-black transition hover:bg-[#ffcc00]"
+              className="rounded-full bg-[#FFD700] px-5 py-2 text-sm font-black text-black transition hover:bg-[#ffcc00]"
             >
               Home
             </Link>
@@ -41,10 +41,10 @@ export default function AuthLayout({
                 <img 
                   src="/logo.png" 
                   alt="YabaRight Logo" 
-                  className="mb-6 h-16 w-auto"
+                  className="mb-6 h-20 w-auto"
                 />
                 <h2 className="mt-6 text-4xl font-black leading-tight">
-                  Shop smarter. <span className="text-[#c88d00]">Style brighter.</span>
+                  Shop smarter. <span className="text-[#FFD700]">Style brighter.</span>
                 </h2>
                 <p className="mt-4 text-base text-white/70">
                   Discover quality pre owned pieces that look premium, feel effortless, and fit your
@@ -54,7 +54,7 @@ export default function AuthLayout({
                 <div className="mt-8 space-y-4">
                   {['Curated thrift essentials', 'Trustworthy fashion sellers', 'Fast and easy checkout'].map((item) => (
                     <div key={item} className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-3">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#c88d00] text-lg font-black text-black">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#FFD700] text-lg font-black text-black">
                         ✓
                       </div>
                       <span className="text-sm text-white/85">{item}</span>
@@ -70,7 +70,7 @@ export default function AuthLayout({
                   <img 
                     src="/logo.png" 
                     alt="YabaRight Logo" 
-                    className="mx-auto h-16 w-auto lg:mx-0"
+                    className="mx-auto h-20 w-auto lg:mx-0"
                   />
                   <p className="mt-2 text-sm text-gray-600">Look Good. Spend Smart. Shop Right.</p>
                 </div>
