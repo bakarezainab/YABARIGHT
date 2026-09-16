@@ -125,233 +125,155 @@ export default function Home() {
 				</div>
 			</header>
 
-			{/* Hero Banner Carousel - Multiple Product Banners */}
+			{/* Hero Banner Carousel - Professional Marketing Banners */}
 			<section className="relative overflow-hidden">
 				<div className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide">
-					{/* Banner 1 - Casual Wears - Warm Orange/Yellow for colorful shirts */}
+					{/* Banner 1 - Casual Shirts */}
 					<div className="min-w-full snap-center">
-						<div className="relative h-[300px] md:h-[400px] bg-gradient-to-r from-orange-300 via-yellow-200 to-yellow-100">
+						<div className="relative h-[450px] md:h-[550px] lg:h-[600px]">
 							<img
-								src="/polo-shirts.jpg"
-								alt="Casual Wears - Polo Shirts"
-								className="absolute right-0 h-full w-3/5 object-cover"
+								src="/WhatsApp Image 2026-09-16 at 1.28.37 PM.jpeg"
+								alt="Look Sharp Chop Casuals"
+								className="h-full w-full object-contain"
 							/>
-							<div className="relative h-full container-custom flex items-center">
-								<div className="max-w-xs md:max-w-sm space-y-2 md:space-y-3 z-10">
-									<h2 className="text-xl font-black text-gray-900 md:text-2xl lg:text-3xl leading-tight">
-										YOUR STYLE,<br />YOUR PRICE.
-									</h2>
-									<p className="text-lg font-black text-gray-900 md:text-xl">
-										CASUAL WEARS
-									</p>
-									<p className="text-base font-black text-gray-900 md:text-lg">
-										SHOP BELOW ₦10K
-									</p>
-									<div className="flex gap-2 pt-1">
-										<Link
-											href="/products?category=casual&condition=pre-owned"
-											className="rounded-full bg-white px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-wide text-black transition hover:bg-gray-100"
-										>
-											Pre-owned
-										</Link>
-										<Link
-											href="/products?category=casual&condition=new"
-											className="rounded-full bg-gray-900 px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-wide text-white transition hover:bg-black"
-										>
-											New
-										</Link>
-									</div>
-								</div>
+							<div className="absolute bottom-6 left-6 flex gap-3 z-10">
+								<Link
+									href="/products?category=casual&condition=pre-owned"
+									className="rounded-full bg-white px-6 py-2.5 text-xs font-black uppercase tracking-wide text-black shadow-lg transition hover:bg-gray-100"
+								>
+									Pre-owned
+								</Link>
+								<Link
+									href="/products?category=casual&condition=new"
+									className="rounded-full bg-gray-900 px-6 py-2.5 text-xs font-black uppercase tracking-wide text-white shadow-lg transition hover:bg-black"
+								>
+									New
+								</Link>
 							</div>
 						</div>
 					</div>
 
-					{/* Banner 2 - Office Shirts - Light Blue/Sky for professional shirts */}
+					{/* Banner 2 - Office Shirts */}
 					<div className="min-w-full snap-center">
-						<div className="relative h-[300px] md:h-[400px] bg-gradient-to-r from-sky-200 via-blue-100 to-cyan-50">
+						<div className="relative h-[450px] md:h-[550px] lg:h-[600px]">
 							<img
-								src="/casual-shirts-stack.jpg"
-								alt="Office Shirts"
-								className="absolute right-0 h-full w-3/5 object-cover"
+								src="/WhatsApp Image 2026-09-16 at 1.28.37 PM (4).jpeg"
+								alt="Look Good Pay Less - Office Shirts"
+								className="h-full w-full object-contain"
 							/>
-							<div className="relative h-full container-custom flex items-center">
-								<div className="max-w-xs md:max-w-sm space-y-2 md:space-y-3 z-10">
-									<h2 className="text-xl font-black text-gray-900 md:text-2xl lg:text-3xl leading-tight">
-										DESIGNER LOOKS.<br />EVERYDAY PRICES.
-									</h2>
-									<p className="text-lg font-black text-gray-900 md:text-xl">
-										OFFICE SHIRTS
-									</p>
-									<p className="text-base font-black text-gray-900 md:text-lg">
-										SHOP BELOW ₦10K
-									</p>
-									<div className="flex gap-2 pt-1">
-										<Link
-											href="/products?category=shirts&condition=pre-owned"
-											className="rounded-full bg-white px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-wide text-black transition hover:bg-gray-100"
-										>
-											Pre-owned
-										</Link>
-										<Link
-											href="/products?category=shirts&condition=new"
-											className="rounded-full bg-gray-900 px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-wide text-white transition hover:bg-black"
-										>
-											New
-										</Link>
-									</div>
-								</div>
+							<div className="absolute bottom-6 left-6 flex gap-3 z-10">
+								<Link
+									href="/products?category=shirts&condition=pre-owned"
+									className="rounded-full bg-white px-6 py-2.5 text-xs font-black uppercase tracking-wide text-black shadow-lg transition hover:bg-gray-100"
+								>
+									Pre-owned
+								</Link>
+								<Link
+									href="/products?category=shirts&condition=new"
+									className="rounded-full bg-gray-900 px-6 py-2.5 text-xs font-black uppercase tracking-wide text-white shadow-lg transition hover:bg-black"
+								>
+									New
+								</Link>
 							</div>
 						</div>
 					</div>
 
-					{/* Banner 3 - Female Shoes - Soft Beige/Tan for black shoes */}
+					{/* Banner 3 - Female Shoes */}
 					<div className="min-w-full snap-center">
-						<div className="relative h-[300px] md:h-[400px] bg-gradient-to-r from-amber-100 via-stone-100 to-orange-50">
+						<div className="relative h-[450px] md:h-[550px] lg:h-[600px]">
 							<img
-								src="/female-shoe-flat.jpg"
-								alt="Female Shoes"
-								className="absolute right-0 h-full w-3/5 object-cover"
+								src="/WhatsApp Image 2026-09-16 at 1.28.38 PM.jpeg"
+								alt="Wear The Look Own The Confidence"
+								className="h-full w-full object-contain"
 							/>
-							<div className="relative h-full container-custom flex items-center">
-								<div className="max-w-xs md:max-w-sm space-y-2 md:space-y-3 z-10">
-									<h2 className="text-xl font-black text-gray-900 md:text-2xl lg:text-3xl leading-tight">
-										WEAR THE LOOK.<br />OWN THE CONFIDENCE.
-									</h2>
-									<p className="text-lg font-black text-gray-900 md:text-xl">
-										FEMALE SHOES
-									</p>
-									<p className="text-base font-black text-gray-900 md:text-lg">
-										₦9,999
-									</p>
-									<div className="flex gap-2 pt-1">
-										<Link
-											href="/products?category=shoes&condition=pre-owned"
-											className="rounded-full bg-white px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-wide text-black transition hover:bg-gray-100"
-										>
-											Pre-owned
-										</Link>
-										<Link
-											href="/products?category=shoes&condition=new"
-											className="rounded-full bg-gray-900 px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-wide text-white transition hover:bg-black"
-										>
-											New
-										</Link>
-									</div>
-								</div>
+							<div className="absolute bottom-6 left-6 flex gap-3 z-10">
+								<Link
+									href="/products?category=shoes&condition=pre-owned"
+									className="rounded-full bg-white px-6 py-2.5 text-xs font-black uppercase tracking-wide text-black shadow-lg transition hover:bg-gray-100"
+								>
+									Pre-owned
+								</Link>
+								<Link
+									href="/products?category=shoes&condition=new"
+									className="rounded-full bg-gray-900 px-6 py-2.5 text-xs font-black uppercase tracking-wide text-white shadow-lg transition hover:bg-black"
+								>
+									New
+								</Link>
 							</div>
 						</div>
 					</div>
 
-					{/* Banner 4 - Bags - Soft Pink/Rose for brown/tan bags */}
+					{/* Banner 4 - Corporate Shoes */}
 					<div className="min-w-full snap-center">
-						<div className="relative h-[300px] md:h-[400px] bg-gradient-to-r from-pink-200 via-rose-100 to-pink-50">
+						<div className="relative h-[450px] md:h-[550px] lg:h-[600px]">
 							<img
-								src="/WhatsApp Image 2026-09-16 at 9.18.54 AM.jpeg"
-								alt="Bags Collection"
-								className="absolute right-0 h-full w-3/5 object-cover"
+								src="/WhatsApp Image 2026-09-16 at 1.28.37 PM (2).jpeg"
+								alt="Great Fashion Within Your Reach"
+								className="h-full w-full object-contain"
 							/>
-							<div className="relative h-full container-custom flex items-center">
-								<div className="max-w-xs md:max-w-sm space-y-2 md:space-y-3 z-10">
-									<h2 className="text-xl font-black text-gray-900 md:text-2xl lg:text-3xl leading-tight">
-										LOOK GOOD.<br />PAY LESS.
-									</h2>
-									<p className="text-lg font-black text-gray-900 md:text-xl">
-										DESIGNER BAGS
-									</p>
-									<p className="text-base font-black text-gray-900 md:text-lg">
-										SHOP BELOW ₦15K
-									</p>
-									<div className="flex gap-2 pt-1">
-										<Link
-											href="/products?category=bags&condition=pre-owned"
-											className="rounded-full bg-white px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-wide text-black transition hover:bg-gray-100"
-										>
-											Pre-owned
-										</Link>
-										<Link
-											href="/products?category=bags&condition=new"
-											className="rounded-full bg-gray-900 px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-wide text-white transition hover:bg-black"
-										>
-											New
-										</Link>
-									</div>
-								</div>
+							<div className="absolute bottom-6 left-6 flex gap-3 z-10">
+								<Link
+									href="/products?category=shoes&condition=pre-owned"
+									className="rounded-full bg-white px-6 py-2.5 text-xs font-black uppercase tracking-wide text-black shadow-lg transition hover:bg-gray-100"
+								>
+									Pre-owned
+								</Link>
+								<Link
+									href="/products?category=shoes&condition=new"
+									className="rounded-full bg-gray-900 px-6 py-2.5 text-xs font-black uppercase tracking-wide text-white shadow-lg transition hover:bg-black"
+								>
+									New
+								</Link>
 							</div>
 						</div>
 					</div>
 
-					{/* Banner 5 - Suits & Blazers - Cool Gray/Slate for gray suit */}
+					{/* Banner 5 - Suits */}
 					<div className="min-w-full snap-center">
-						<div className="relative h-[300px] md:h-[400px] bg-gradient-to-r from-slate-200 via-gray-100 to-zinc-50">
+						<div className="relative h-[450px] md:h-[550px] lg:h-[600px]">
 							<img
-								src="/suit-grey-1.jpg"
-								alt="Suits and Blazers"
-								className="absolute right-0 h-full w-3/5 object-cover"
+								src="/WhatsApp Image 2026-09-16 at 1.28.37 PM (3).jpeg"
+								alt="Look Rich Spend Smart - Suits"
+								className="h-full w-full object-contain"
 							/>
-							<div className="relative h-full container-custom flex items-center">
-								<div className="max-w-xs md:max-w-sm space-y-2 md:space-y-3 z-10">
-									<h2 className="text-xl font-black text-gray-900 md:text-2xl lg:text-3xl leading-tight">
-										ELEVATE YOUR LOOK.<br />NOT YOUR BUDGET.
-									</h2>
-									<p className="text-lg font-black text-gray-900 md:text-xl">
-										SUITS & BLAZERS
-									</p>
-									<p className="text-base font-black text-gray-900 md:text-lg">
-										SHOP BELOW ₦20K
-									</p>
-									<div className="flex gap-2 pt-1">
-										<Link
-											href="/products?category=suits&condition=pre-owned"
-											className="rounded-full bg-white px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-wide text-black transition hover:bg-gray-100"
-										>
-											Pre-owned
-										</Link>
-										<Link
-											href="/products?category=suits&condition=new"
-											className="rounded-full bg-gray-900 px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-wide text-white transition hover:bg-black"
-										>
-											New
-										</Link>
-									</div>
-								</div>
+							<div className="absolute bottom-6 left-6 flex gap-3 z-10">
+								<Link
+									href="/products?category=suits&condition=pre-owned"
+									className="rounded-full bg-white px-6 py-2.5 text-xs font-black uppercase tracking-wide text-black shadow-lg transition hover:bg-gray-100"
+								>
+									Pre-owned
+								</Link>
+								<Link
+									href="/products?category=suits&condition=new"
+									className="rounded-full bg-gray-900 px-6 py-2.5 text-xs font-black uppercase tracking-wide text-white shadow-lg transition hover:bg-black"
+								>
+									New
+								</Link>
 							</div>
 						</div>
 					</div>
 
-					{/* Banner 6 - Jeans - Deep Blue/Indigo for denim */}
+					{/* Banner 6 - Casual Alternative */}
 					<div className="min-w-full snap-center">
-						<div className="relative h-[300px] md:h-[400px] bg-gradient-to-r from-blue-200 via-indigo-100 to-blue-50">
+						<div className="relative h-[450px] md:h-[550px] lg:h-[600px]">
 							<img
-								src="/jeans-stack.jpg"
-								alt="Jeans Collection"
-								className="absolute right-0 h-full w-3/5 object-cover"
+								src="/WhatsApp Image 2026-09-16 at 1.28.37 PM (1).jpeg"
+								alt="Look Sharp Chop Casuals Alternative"
+								className="h-full w-full object-contain"
 							/>
-							<div className="relative h-full container-custom flex items-center">
-								<div className="max-w-xs md:max-w-sm space-y-2 md:space-y-3 z-10">
-									<h2 className="text-xl font-black text-gray-900 md:text-2xl lg:text-3xl leading-tight">
-										YOUR NEXT FIT<br />IS HERE.
-									</h2>
-									<p className="text-lg font-black text-gray-900 md:text-xl">
-										JEANS
-									</p>
-									<p className="text-base font-black text-gray-900 md:text-lg">
-										₦9,999
-									</p>
-									<div className="flex gap-2 pt-1">
-										<Link
-											href="/products?category=jeans&condition=pre-owned"
-											className="rounded-full bg-white px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-wide text-black transition hover:bg-gray-100"
-										>
-											Pre-owned
-										</Link>
-										<Link
-											href="/products?category=jeans&condition=new"
-											className="rounded-full bg-gray-900 px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-wide text-white transition hover:bg-black"
-										>
-											New
-										</Link>
-									</div>
-								</div>
+							<div className="absolute bottom-6 left-6 flex gap-3 z-10">
+								<Link
+									href="/products?category=casual&condition=pre-owned"
+									className="rounded-full bg-white px-6 py-2.5 text-xs font-black uppercase tracking-wide text-black shadow-lg transition hover:bg-gray-100"
+								>
+									Pre-owned
+								</Link>
+								<Link
+									href="/products?category=casual&condition=new"
+									className="rounded-full bg-gray-900 px-6 py-2.5 text-xs font-black uppercase tracking-wide text-white shadow-lg transition hover:bg-black"
+								>
+									New
+								</Link>
 							</div>
 						</div>
 					</div>
@@ -425,7 +347,7 @@ export default function Home() {
 						>
 							<div className="relative h-64 overflow-hidden">
 								<img
-									src="/polo-shirts.jpg"
+									src="/WhatsApp Image 2026-09-16 at 1.28.37 PM.jpeg"
 									alt="Office Shirts Bundle"
 									className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
 								/>
@@ -458,7 +380,7 @@ export default function Home() {
 						>
 							<div className="relative h-64 overflow-hidden">
 								<img
-									src="/polo-shirts.jpg"
+									src="/WhatsApp Image 2026-09-16 at 1.28.37 PM.jpeg"
 									alt="Casual Polo Shirts"
 									className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
 								/>
@@ -491,7 +413,7 @@ export default function Home() {
 						>
 							<div className="relative h-64 overflow-hidden">
 								<img
-									src="/WhatsApp Image 2026-09-16 at 9.18.54 AM.jpeg"
+									src="/WhatsApp Image 2026-09-16 at 1.28.37 PM (2).jpeg"
 									alt="Designer Handbag"
 									className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
 								/>
@@ -524,7 +446,7 @@ export default function Home() {
 						>
 							<div className="relative h-64 overflow-hidden">
 								<img
-									src="/jeans-stack.jpg"
+									src="/WhatsApp Image 2026-09-16 at 1.28.37 PM (1).jpeg"
 									alt="Premium Jeans"
 									className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
 								/>
