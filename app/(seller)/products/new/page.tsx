@@ -2,8 +2,11 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { useProductStore } from '@/store/productStore';
+import { useToastStore } from '@/store/toastStore';
 import { ProductCondition, type Product } from '@/types';
+import { ArrowLeft, Upload, CheckCircle2, Sparkles } from 'lucide-react';
 
 const initialState = {
   name: '',
@@ -13,14 +16,16 @@ const initialState = {
   condition: ProductCondition.GOOD,
   size: 'M',
   brand: '',
-  image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80',
+  image: '/casual-shirts-stack.jpg',
 };
 
 export default function NewProductPage() {
   const router = useRouter();
   const products = useProductStore((state) => state.products);
   const setProducts = useProductStore((state) => state.setProducts);
+  const showToast = useToastStore((state) => state.showToast);
   const [form, setForm] = useState(initialState);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = event.target;
@@ -29,6 +34,7 @@ export default function NewProductPage() {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    setIsSubmitting(true);
 
     const newProduct: Product = {
       id: `prod-${Date.now()}`,
@@ -43,10 +49,10 @@ export default function NewProductPage() {
       condition: form.condition,
       material: 'Premium fabric',
       color: 'Neutral',
-      brand: form.brand || 'YABARIGHT Seller',
+      brand: form.brand || 'Verified Thrift Seller',
       quantity: 5,
       sold: 0,
-      rating: 4.6,
+      rating: 4.8,
       trending: false,
       published: true,
       createdAt: new Date(),
@@ -54,81 +60,157 @@ export default function NewProductPage() {
     };
 
     setProducts([...products, newProduct]);
+    showToast(`"${form.name}" has been published to the marketplace!`, 'success');
     router.push('/dashboard');
   };
 
   return (
-    <main className="min-h-screen bg-[#fffaf0] text-secondary">
-      <div className="container-custom py-8 sm:py-10">
-        <div className="mb-8">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Seller tools</p>
-          <h1 className="mt-2 text-3xl font-black text-secondary">List a new product</h1>
+    <div className="container-custom py-6 sm:py-10">
+      <div className="mb-6 flex items-center justify-between">
+        <div>
+          <span className="text-xs font-black uppercase tracking-[0.2em] text-[#c88d00]">
+            Vendor Listing Tool
+          </span>
+          <h1 className="mt-1 text-2xl sm:text-3xl font-black text-gray-950">
+            List a New Item
+          </h1>
+        </div>
+        <Link
+          href="/dashboard"
+          className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-4 py-2 text-xs font-bold text-gray-700 shadow-sm hover:border-[#FFD700] hover:text-black transition"
+        >
+          <ArrowLeft className="h-4 w-4" />
+          <span>Dashboard</span>
+        </Link>
+      </div>
+
+      <form onSubmit={handleSubmit} className="mx-auto max-w-3xl rounded-[2rem] border border-black/10 bg-white p-6 sm:p-8 shadow-sm">
+        <div className="grid gap-5 md:grid-cols-2 text-xs">
+          <div className="md:col-span-2">
+            <label className="mb-1.5 block font-bold text-gray-700">Product Title</label>
+            <input 
+              name="name" 
+              value={form.name} 
+              onChange={handleChange} 
+              required 
+              placeholder="e.g. Vintage Oversized Denim Jacket"
+              className="w-full rounded-xl border border-gray-200 bg-[#fbf8f2] px-4 py-3 text-xs outline-none focus:border-[#FFD700] focus:ring-2 focus:ring-[#FFD700]/20" 
+            />
+          </div>
+
+          <div>
+            <label className="mb-1.5 block font-bold text-gray-700">Category</label>
+            <select 
+              name="category" 
+              value={form.category} 
+              onChange={handleChange} 
+              className="w-full rounded-xl border border-gray-200 bg-[#fbf8f2] px-4 py-3 text-xs outline-none focus:border-[#FFD700]"
+            >
+              <option>Clothing</option>
+              <option>Bags</option>
+              <option>Shoes</option>
+              <option>Shirts</option>
+              <option>Suits</option>
+              <option>Accessories</option>
+              <option>Designer Items</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="mb-1.5 block font-bold text-gray-700">Listing Price (₦)</label>
+            <input 
+              type="number" 
+              name="price" 
+              value={form.price} 
+              onChange={handleChange} 
+              required 
+              placeholder="12000"
+              className="w-full rounded-xl border border-gray-200 bg-[#fbf8f2] px-4 py-3 text-xs outline-none focus:border-[#FFD700]" 
+            />
+          </div>
+
+          <div>
+            <label className="mb-1.5 block font-bold text-gray-700">Item Condition</label>
+            <select 
+              name="condition" 
+              value={form.condition} 
+              onChange={handleChange} 
+              className="w-full rounded-xl border border-gray-200 bg-[#fbf8f2] px-4 py-3 text-xs outline-none focus:border-[#FFD700]"
+            >
+              <option value={ProductCondition.NEW}>Brand New with Tags</option>
+              <option value={ProductCondition.LIKE_NEW}>Thrift Grade A (Like New)</option>
+              <option value={ProductCondition.GOOD}>Good (Lightly Pre-owned)</option>
+              <option value={ProductCondition.FAIR}>Fair</option>
+            </select>
+          </div>
+
+          <div>
+            <label className="mb-1.5 block font-bold text-gray-700">Size / Fit</label>
+            <input 
+              name="size" 
+              value={form.size} 
+              onChange={handleChange} 
+              placeholder="e.g. M, L, 42, Free Size"
+              className="w-full rounded-xl border border-gray-200 bg-[#fbf8f2] px-4 py-3 text-xs outline-none focus:border-[#FFD700]" 
+            />
+          </div>
+
+          <div className="md:col-span-2">
+            <label className="mb-1.5 block font-bold text-gray-700">Brand / Designer</label>
+            <input 
+              name="brand" 
+              value={form.brand} 
+              onChange={handleChange} 
+              placeholder="e.g. Zara, Nike, Thrift Boutique"
+              className="w-full rounded-xl border border-gray-200 bg-[#fbf8f2] px-4 py-3 text-xs outline-none focus:border-[#FFD700]" 
+            />
+          </div>
+
+          <div className="md:col-span-2">
+            <label className="mb-1.5 block font-bold text-gray-700">Photo Image URL</label>
+            <div className="relative">
+              <input 
+                name="image" 
+                value={form.image} 
+                onChange={handleChange} 
+                className="w-full rounded-xl border border-gray-200 bg-[#fbf8f2] px-4 py-3 pl-10 text-xs outline-none focus:border-[#FFD700]" 
+              />
+              <Upload className="absolute left-3.5 top-3.5 h-4 w-4 text-gray-400" />
+            </div>
+          </div>
+
+          <div className="md:col-span-2">
+            <label className="mb-1.5 block font-bold text-gray-700">Product Description</label>
+            <textarea 
+              name="description" 
+              value={form.description} 
+              onChange={handleChange} 
+              required 
+              rows={4} 
+              placeholder="Describe the fabric, fit, styling notes, and condition details..."
+              className="w-full rounded-xl border border-gray-200 bg-[#fbf8f2] px-4 py-3 text-xs outline-none focus:border-[#FFD700]" 
+            />
+          </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="mx-auto max-w-3xl rounded-[2rem] border border-black/5 bg-white p-6 shadow-sm sm:p-8">
-          <div className="grid gap-5 md:grid-cols-2">
-            <div className="md:col-span-2">
-              <label className="mb-2 block text-sm font-semibold text-gray-700">Product name</label>
-              <input name="name" value={form.name} onChange={handleChange} required className="w-full rounded-2xl border border-gray-200 bg-[#fffdf9] px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" />
-            </div>
-
-            <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-700">Category</label>
-              <select name="category" value={form.category} onChange={handleChange} className="w-full rounded-2xl border border-gray-200 bg-[#fffdf9] px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
-                <option>Clothing</option>
-                <option>Bags</option>
-                <option>Shoes</option>
-                <option>Accessories</option>
-                <option>Designer Items</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-700">Price (₦)</label>
-              <input type="number" name="price" value={form.price} onChange={handleChange} required className="w-full rounded-2xl border border-gray-200 bg-[#fffdf9] px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" />
-            </div>
-
-            <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-700">Condition</label>
-              <select name="condition" value={form.condition} onChange={handleChange} className="w-full rounded-2xl border border-gray-200 bg-[#fffdf9] px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20">
-                <option value={ProductCondition.NEW}>New</option>
-                <option value={ProductCondition.LIKE_NEW}>Like New</option>
-                <option value={ProductCondition.GOOD}>Good</option>
-                <option value={ProductCondition.FAIR}>Fair</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="mb-2 block text-sm font-semibold text-gray-700">Size</label>
-              <input name="size" value={form.size} onChange={handleChange} className="w-full rounded-2xl border border-gray-200 bg-[#fffdf9] px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" />
-            </div>
-
-            <div className="md:col-span-2">
-              <label className="mb-2 block text-sm font-semibold text-gray-700">Brand</label>
-              <input name="brand" value={form.brand} onChange={handleChange} className="w-full rounded-2xl border border-gray-200 bg-[#fffdf9] px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" />
-            </div>
-
-            <div className="md:col-span-2">
-              <label className="mb-2 block text-sm font-semibold text-gray-700">Image URL</label>
-              <input name="image" value={form.image} onChange={handleChange} className="w-full rounded-2xl border border-gray-200 bg-[#fffdf9] px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" />
-            </div>
-
-            <div className="md:col-span-2">
-              <label className="mb-2 block text-sm font-semibold text-gray-700">Description</label>
-              <textarea name="description" value={form.description} onChange={handleChange} required rows={4} className="w-full rounded-2xl border border-gray-200 bg-[#fffdf9] px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20" />
-            </div>
-          </div>
-
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <button type="submit" className="flex-1 rounded-full bg-secondary px-6 py-3 text-base font-semibold text-white transition hover:bg-black">
-              Publish listing
-            </button>
-            <button type="button" onClick={() => router.push('/dashboard')} className="flex-1 rounded-full border border-secondary bg-primary px-6 py-3 text-base font-semibold text-secondary transition hover:translate-y-[-1px]">
-              Cancel
-            </button>
-          </div>
-        </form>
-      </div>
-    </main>
+        <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <button 
+            type="submit" 
+            disabled={isSubmitting}
+            className="flex-1 flex items-center justify-center gap-2 rounded-full bg-[#111111] py-3.5 text-xs font-black uppercase tracking-wider text-[#FFD700] hover:bg-black transition shadow-md"
+          >
+            <CheckCircle2 className="h-4 w-4" />
+            <span>{isSubmitting ? 'Publishing...' : 'Publish Listing'}</span>
+          </button>
+          <button 
+            type="button" 
+            onClick={() => router.push('/dashboard')} 
+            className="flex-1 rounded-full border border-gray-200 bg-gray-50 py-3.5 text-xs font-black uppercase tracking-wider text-gray-700 hover:bg-gray-100 transition"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
   );
 }
