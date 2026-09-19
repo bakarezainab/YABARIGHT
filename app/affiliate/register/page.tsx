@@ -16,7 +16,7 @@ export default function AffiliateRegisterPage() {
   const showToast = useToastStore((s) => s.showToast);
 
   const [form, setForm] = useState({
-    fullName: '', email: '', phone: '', socialHandle: '',
+    fullName: '', email: '', phone: '',
   });
   const [affiliate, setAffiliate] = useState<Affiliate | null>(null);
   const [copied, setCopied] = useState(false);
@@ -189,7 +189,7 @@ export default function AffiliateRegisterPage() {
                 How it works
               </p>
               {[
-                '1. Register with your name, email & social handle',
+                '1. Register with your name, email & phone',
                 '2. Get your unique referral code instantly',
                 '3. Share your link on Instagram, TikTok, X, WhatsApp',
                 '4. Earn 10% whenever someone buys through your link',
@@ -227,16 +227,15 @@ export default function AffiliateRegisterPage() {
                   <h2 className="text-base font-black text-gray-900">Create Your Affiliate Account</h2>
 
                   {[
-                    { label: 'Full Name', key: 'fullName', type: 'text', placeholder: 'e.g. Zainab Bakare' },
+                    { label: 'Full Name', key: 'fullName', type: 'text', placeholder: 'e.g. John Doe' },
                     { label: 'Email Address', key: 'email', type: 'email', placeholder: 'your@email.com' },
                     { label: 'Phone Number', key: 'phone', type: 'tel', placeholder: '0801 234 5678' },
-                    { label: 'Social Handle (Instagram / TikTok)', key: 'socialHandle', type: 'text', placeholder: '@yourhandle' },
                   ].map(({ label, key, type, placeholder }) => (
                     <div key={key}>
                       <label className="mb-1.5 block text-xs font-bold text-gray-700">{label}</label>
                       <input
                         type={type}
-                        required={key !== 'socialHandle'}
+                        required
                         placeholder={placeholder}
                         value={form[key as keyof typeof form]}
                         onChange={(e) => setForm({ ...form, [key]: e.target.value })}

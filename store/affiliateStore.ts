@@ -6,7 +6,7 @@ export interface Affiliate {
   fullName: string;
   email: string;
   phone: string;
-  socialHandle: string;
+  socialHandle?: string;
   code: string;
   joinedAt: string;
   totalEarnings: number;
