@@ -4,6 +4,7 @@ import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useProductStore } from '@/store/productStore';
 import { sampleProducts } from '@/lib/mockProducts';
+import { useAffiliateStore } from '@/store/affiliateStore';
 import { ProductCard } from '@/components/ProductCard';
 import { 
   Filter, 
@@ -44,10 +45,22 @@ function ProductsContent() {
     isLoading,
     error,
   } = useProductStore();
+  const { setActiveRef } = useAffiliateStore();
 
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchInput, setSearchInput] = useState('');
+
+  // Capture affiliate referral code from URL
+  useEffect(() => {
+    const ref = searchParams.get('ref');
+    if (ref) {
+      setActiveRef(ref.toUpperCase());
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('yabaright_ref', ref.toUpperCase());
+      }
+    }
+  }, [searchParams, setActiveRef]);
 
   // Sync search parameters from URL on mount/change
   useEffect(() => {

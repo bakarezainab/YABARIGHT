@@ -1,12 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { getProductById, sampleProducts } from '@/lib/mockProducts';
 import { useCartStore } from '@/store/cartStore';
 import { useWishlistStore } from '@/store/wishlistStore';
 import { useToastStore } from '@/store/toastStore';
+import { useAffiliateStore } from '@/store/affiliateStore';
 import { ProductCard } from '@/components/ProductCard';
 import { 
   ArrowLeft, 
@@ -27,15 +28,28 @@ export default function ProductDetailPage({
   params: { productId: string };
 }) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const product = getProductById(params.productId);
   const addItem = useCartStore((state) => state.addItem);
   const { items: wishlistItems, toggleItem } = useWishlistStore();
   const showToast = useToastStore((state) => state.showToast);
+  const { setActiveRef } = useAffiliateStore();
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [selectedSize, setSelectedSize] = useState(product?.size || 'M');
   const [quantity, setQuantity] = useState(1);
   const [copied, setCopied] = useState(false);
+
+  // Capture affiliate ref from URL and persist it
+  useEffect(() => {
+    const ref = searchParams.get('ref');
+    if (ref) {
+      setActiveRef(ref.toUpperCase());
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('yabaright_ref', ref.toUpperCase());
+      }
+    }
+  }, [searchParams, setActiveRef]);
 
   if (!product) {
     return (
